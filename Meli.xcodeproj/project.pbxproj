@@ -14,6 +14,10 @@
 		C640A8FD2ACF840F002AA5B1 /* MeliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A8FC2ACF840F002AA5B1 /* MeliTests.swift */; };
 		C640A9072ACF840F002AA5B1 /* MeliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9062ACF840F002AA5B1 /* MeliUITests.swift */; };
 		C640A9092ACF840F002AA5B1 /* MeliUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9082ACF840F002AA5B1 /* MeliUITestsLaunchTests.swift */; };
+		C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A91C2AD1C4A7002AA5B1 /* ProductListPageView.swift */; };
+		C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */; };
+		C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9222AD1D5E4002AA5B1 /* Product.swift */; };
+		C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9242AD1D672002AA5B1 /* ProductListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,11 @@
 		C640A9022ACF840F002AA5B1 /* MeliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeliUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C640A9062ACF840F002AA5B1 /* MeliUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliUITests.swift; sourceTree = "<group>"; };
 		C640A9082ACF840F002AA5B1 /* MeliUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C640A91C2AD1C4A7002AA5B1 /* ProductListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPageView.swift; sourceTree = "<group>"; };
+		C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteDTO.swift; sourceTree = "<group>"; };
+		C640A9222AD1D5E4002AA5B1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C640A9242AD1D672002AA5B1 /* ProductListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRow.swift; sourceTree = "<group>"; };
+		C640A92E2AD1E55A002AA5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,9 @@
 		C640A8EA2ACF840E002AA5B1 /* Meli */ = {
 			isa = PBXGroup;
 			children = (
+				C640A92E2AD1E55A002AA5B1 /* Info.plist */,
+				C640A9262AD1E06E002AA5B1 /* Utils */,
+				C640A9152AD1C459002AA5B1 /* Modules */,
 				C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */,
 				C640A8ED2ACF840E002AA5B1 /* ContentView.swift */,
 				C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */,
@@ -125,6 +137,88 @@
 				C640A9082ACF840F002AA5B1 /* MeliUITestsLaunchTests.swift */,
 			);
 			path = MeliUITests;
+			sourceTree = "<group>";
+		};
+		C640A9152AD1C459002AA5B1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9182AD1C472002AA5B1 /* ProductDetail */,
+				C640A9172AD1C469002AA5B1 /* ProductList */,
+				C640A9162AD1C462002AA5B1 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C640A9162AD1C462002AA5B1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C640A9172AD1C469002AA5B1 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9192AD1C47F002AA5B1 /* Data */,
+				C640A91A2AD1C484002AA5B1 /* Domain */,
+				C640A91B2AD1C489002AA5B1 /* Presentation */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		C640A9182AD1C472002AA5B1 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		C640A9192AD1C47F002AA5B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C640A91E2AD1C689002AA5B1 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C640A91A2AD1C484002AA5B1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9212AD1D5D9002AA5B1 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C640A91B2AD1C489002AA5B1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C640A91C2AD1C4A7002AA5B1 /* ProductListPageView.swift */,
+				C640A9242AD1D672002AA5B1 /* ProductListRow.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C640A91E2AD1C689002AA5B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C640A9212AD1D5D9002AA5B1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9222AD1D5E4002AA5B1 /* Product.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C640A9262AD1E06E002AA5B1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C640A8EE2ACF840E002AA5B1 /* ContentView.swift in Sources */,
+				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
+				C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */,
+				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
+				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,11 +523,13 @@
 				DEVELOPMENT_TEAM = 7G4VS94BQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meli/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +554,13 @@
 				DEVELOPMENT_TEAM = 7G4VS94BQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meli/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
