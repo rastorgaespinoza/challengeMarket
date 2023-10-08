@@ -5,4 +5,8 @@
 //  Created by Rodrigo Astorga Espinoza on 08-10-23.
 //
 
-import Foundation
+import Combine
+
+protocol SearchProductsRepository {
+  func getProducts(query: String) -> AnyPublisher<[Product], Error>
+}

@@ -7,8 +7,7 @@
 
 import Foundation
 
-// MARK: - Cause
-struct Cause: Codable {
+struct ProductRemoteDTO: Decodable {
   let id: String?
   let title: String?
   let condition: String?
@@ -23,8 +22,8 @@ struct Cause: Codable {
   let thumbnail: String?
   let currencyID: String?
   let orderBackend: Int?
-  let price: Int?
-  let originalPrice: Int?
+  let price: Double?
+  let originalPrice: Double?
 //  let salePrice: JSONNull?
   let soldQuantity: Int?
   let availableQuantity: Int?

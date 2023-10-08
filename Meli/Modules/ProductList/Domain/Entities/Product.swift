@@ -5,7 +5,7 @@
 //  Created by Rodrigo Astorga Espinoza on 07-10-23.
 //
 
-struct Product {
+struct Product: Identifiable {
   let id: String
   let title: String
   let price: Double?
