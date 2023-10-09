@@ -26,6 +26,8 @@ struct ProductListRow: View {
         installments
 
         shipping
+
+        officialStoreName
       }
 
       Spacer(minLength: .zero)
@@ -72,6 +74,7 @@ extension ProductListRow {
       HStack(spacing: 8) {
         Text(product.priceFormatted)
           .customFont(.mediumSoft, size: 20)
+          .foregroundColor(.neutral100)
 
         if let discount = product.discount {
           Text("\(discount)% OFF")
@@ -107,6 +110,14 @@ extension ProductListRow {
         .foregroundColor(.success100)
     }
   }
+
+  @ViewBuilder private var officialStoreName: some View {
+    if let officialStoreName = product.officialStoreName {
+      Text("por \(officialStoreName)")
+        .customFont(.regular, size: 12)
+        .foregroundColor(.neutral400)
+    }
+  }
 }
 
 extension ProductListRow {
@@ -118,6 +129,7 @@ extension ProductListRow {
     let originalPrice: Double?
     let installments: Installments?
     let freeShipping: Bool
+    let officialStoreName: String?
 
     var imageURL: URL? {
       URL(string: thumbnail)
@@ -177,7 +189,8 @@ struct ProductListRow_Previews: PreviewProvider {
     price: 389_990,
     originalPrice: 669_990,
     installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP"),
-    freeShipping: true
+    freeShipping: true,
+    officialStoreName: "Apple"
   )
 
   static var previews: some View {

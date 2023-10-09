@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ProductDetailPageView: View {
-  let product: ProductDetail
+  let productDetail: ProductDetail
+
+  init(productDetail: ProductDetail) {
+    self.productDetail = productDetail
+  }
 
   var body: some View {
     LazyVStack(alignment: .leading, spacing: 8) {
-      Text(product.title)
+      Text(productDetail.title)
 
-      AsyncImage(url: product.imageURL) { phase in
+      AsyncImage(url: productDetail.imageURL) { phase in
         if let image = phase.image {
           image
             .resizable()
@@ -77,7 +81,7 @@ struct ProductDetailPageView_Previews: PreviewProvider {
   )
 
   static var previews: some View {
-    ProductDetailPageView(product: productDetail)
+    ProductDetailPageView(productDetail: productDetail)
   }
 }
 #endif

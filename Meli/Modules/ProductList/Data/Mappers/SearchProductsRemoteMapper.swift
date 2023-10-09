@@ -38,7 +38,8 @@ extension Array where Element == ProductRemoteDTO {
         originalPrice: $0.originalPrice,
         thumbnail: $0.thumbnail ?? "",
         installments: installments,
-        shipping: shipping
+        shipping: shipping,
+        officialStoreName: $0.officialStoreName
       )
     }
   }

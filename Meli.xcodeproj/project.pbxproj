@@ -35,6 +35,7 @@
 		C640A9682AD37F42002AA5B1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9652AD37F42002AA5B1 /* proximanova-semibold.ttf */; };
 		C640A96A2AD38227002AA5B1 /* proximanovasoft-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */; };
 		C640A96C2AD382F5002AA5B1 /* proximanovasoft-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */; };
+		C640A96E2AD397D4002AA5B1 /* RootContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A96D2AD397D4002AA5B1 /* RootContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C640A9652AD37F42002AA5B1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
 		C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-medium.otf"; sourceTree = "<group>"; };
 		C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-regular.otf"; sourceTree = "<group>"; };
+		C640A96D2AD397D4002AA5B1 /* RootContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		C640A9152AD1C459002AA5B1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C640A96D2AD397D4002AA5B1 /* RootContainer.swift */,
 				C640A9182AD1C472002AA5B1 /* ProductDetail */,
 				C640A9172AD1C469002AA5B1 /* ProductList */,
 			);
@@ -499,6 +502,7 @@
 				C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */,
 				C640A9472AD33FBE002AA5B1 /* ProductListServiceLocator.swift in Sources */,
 				C640A9412AD33A41002AA5B1 /* HTTPClient.swift in Sources */,
+				C640A96E2AD397D4002AA5B1 /* RootContainer.swift in Sources */,
 				C640A9372AD303EC002AA5B1 /* SearchProductsUseCase.swift in Sources */,
 				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
 				C640A9492AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift in Sources */,

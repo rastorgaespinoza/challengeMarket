@@ -15,29 +15,27 @@ struct ProductListPageView: View {
     VStack {
       switch searchProductsViewModel.state {
       case .neverLoading:
-        Text("nothing happens")
+        Text("")
           .onAppear {
             searchProductsViewModel.searchProducts(query: query)
           }
       case .loading:
         ProgressView()
       case .success(let products):
-//        ScrollView {
-//          VStack {
-//            ForEach(products) { productEntity in
-//              ProductListRow(productEntity: productEntity)
-//            }
-//          }
-//        }
+        ScrollView {
+          LazyVStack(spacing: 10) {
+            ForEach(products) { productEntity in
+              NavigationLink(value: Route.product(productEntity)) {
+                ProductListRow(productEntity: productEntity)
+              }
 
-        List(products) { product in
-          ProductListRow(productEntity: product)
-            .listRowInsets(.init())
-            .listRowSeparator(.hidden, edges: .all)
-            .listRowSeparator(.visible, edges: .bottom)
-            .padding(8)
+              if productEntity != products.last {
+                Divider()
+              }
+            }
+          }
+          .padding(.top, 10)
         }
-        .listStyle(.grouped)
         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Buscar en Mercado Libre")
 
       case .error:
@@ -60,7 +58,8 @@ extension ProductListRow {
       price: productEntity.price ?? 0.0,
       originalPrice: productEntity.originalPrice,
       installments: productEntity.installments,
-      freeShipping: productEntity.shipping?.freeShipping ?? false
+      freeShipping: productEntity.shipping?.freeShipping ?? false,
+      officialStoreName: productEntity.officialStoreName
     )
     self.product = productRow
   }
