@@ -10,42 +10,81 @@ import SwiftUI
 struct ProductDetailPageView: View {
   let productDetail: ProductDetail
   @StateObject private var productDetailViewModel = ProductDetailServiceLocator().productDetailViewModel
+  @State private var product: Product?
+  @State private var currentImage: String = ""
 
   init(productDetail: ProductDetail) {
     self.productDetail = productDetail
   }
 
   var body: some View {
-    LazyVStack(alignment: .leading, spacing: 8) {
-      Text(productDetail.title)
+    ScrollView {
+      LazyVStack(alignment: .leading, spacing: 8) {
+        Text(productDetail.title)
 
-      image
+        imageContainer
 
-      prices
+        prices
 
-      seeAllFeatures
-//      switch productDetailViewModel.state {
-//      case .neverLoading:
-//        Text("neverLoading")
-//      case .loading:
-//        ProgressView()
-//          .frame(maxWidth: .infinity)
-//      case .success(let product):
-//        Text("success")
-//      case .error:
-//        Text("error")
-//      }
+        switch productDetailViewModel.state {
+        case .neverLoading:
+          Text("")
+            .onAppear {
+              productDetailViewModel.getProductDetail(itemId: productDetail.id)
+            }
+        case .loading:
+          ProgressView()
+            .frame(maxWidth: .infinity)
+        case let .success(product):
+          seeAllFeatures(product)
 
-      Spacer()
-    }
-    .padding()
-    .onAppear {
-      productDetailViewModel.getProductDetail(itemId: productDetail.id)
+        case .error:
+          EmptyView()
+        }
+
+        Spacer()
+      }
+      .padding()
+      .onChange(of: productDetailViewModel.state, perform: { value in
+        if case let .success(product) = value {
+          self.product = product
+        }
+      })
     }
   }
 }
 
 extension ProductDetailPageView {
+  @ViewBuilder private var imageContainer: some View {
+    if let pictures = product?.pictures, !pictures.isEmpty {
+      TabView(selection: $currentImage) {
+        ForEach(pictures, id: \.self) { picture in
+          AsyncImage(url: URL(string: picture)) { phase in
+            if let image = phase.image {
+              image
+                .resizable()
+                .scaledToFit()
+
+            } else if phase.error != nil {
+              Color(uiColor: UIColor.secondarySystemBackground)
+
+            } else {
+              Color(uiColor: UIColor.secondarySystemBackground)
+            }
+          }
+          .frame(maxWidth: .infinity)
+          .tag(picture)
+
+        }
+      }
+      .tabViewStyle(.page(indexDisplayMode: .always))
+      .indexViewStyle(.page(backgroundDisplayMode: .always))
+      .aspectRatio(0.9, contentMode: .fit)
+    } else {
+      image
+    }
+  }
+
   private var image: some View {
     AsyncImage(url: productDetail.imageURL) { phase in
       if let image = phase.image {
@@ -60,7 +99,9 @@ extension ProductDetailPageView {
         Color(uiColor: UIColor.secondarySystemBackground)
       }
     }
-    .frame(width: 140, height: 140)
+    .frame(width: .infinity)
+    .aspectRatio(0.9, contentMode: .fit)
+//    .frame(width: 140, height: 300)
     .background(Color(uiColor: UIColor.secondarySystemBackground))
     .cornerRadius(8)
   }
@@ -88,17 +129,17 @@ extension ProductDetailPageView {
     }
   }
 
-  private var seeAllFeatures: some View {
-    NavigationLink(value: Route.productFeatures(productDetail.attributes)) {
+  private func seeAllFeatures(_ product: Product) -> some View {
+    NavigationLink(value: Route.productFeatures(product.attributes)) {
       HStack {
         Text("Ver todas las características")
+          .customFont(.regular, size: 14)
+          .foregroundColor(.blue)
         Spacer()
         Image(systemName: "chevron.forward")
       }
       .padding()
-      .overlay(
-        RoundedRectangle(cornerRadius: 8)
-      )
+      .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.neutral400, lineWidth: 1))
     }
   }
 }

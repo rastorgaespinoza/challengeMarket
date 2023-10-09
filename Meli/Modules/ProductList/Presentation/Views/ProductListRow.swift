@@ -60,6 +60,7 @@ extension ProductListRow {
       .customFont(.regularSoft, size: 14)
       .foregroundColor(.neutral200)
       .lineLimit(3)
+      .multilineTextAlignment(.leading)
   }
 
   private var prices: some View {

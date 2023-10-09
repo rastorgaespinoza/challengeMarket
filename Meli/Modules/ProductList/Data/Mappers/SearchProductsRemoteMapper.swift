@@ -40,7 +40,8 @@ extension Array where Element == ProductRemoteDTO {
         installments: installments,
         shipping: shipping,
         officialStoreName: $0.officialStoreName,
-        attributes: []
+        attributes: [],
+        pictures: []
       )
     }
   }

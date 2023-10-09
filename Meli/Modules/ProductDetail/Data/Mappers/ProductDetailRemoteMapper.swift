@@ -16,6 +16,19 @@ enum ProductDetailRemoteMapper {
       mode: productRemote.shipping?.mode,
       tags: productRemote.shipping?.tags
     )
+
+    let attributes = productRemote.attributes?.compactMap({
+      attributeRemote in
+      return ProductAttribute(
+        id: attributeRemote.id,
+        name: attributeRemote.name,
+        valueID: attributeRemote.valueID,
+        valueName: attributeRemote.valueName,
+        attributeGroupID: attributeRemote.attributeGroupID,
+        attributeGroupName: attributeRemote.attributeGroupName
+      )
+    }) ?? []
+
     return Product(
       id: productRemote.id ?? "",
       title: productRemote.title ?? "",
@@ -25,7 +38,8 @@ enum ProductDetailRemoteMapper {
       installments: nil,
       shipping: shipping,
       officialStoreName: nil,
-      attributes: []
+      attributes: attributes,
+      pictures: (productRemote.pictures ?? []).compactMap({ $0.secureURL })
     )
   }
 }

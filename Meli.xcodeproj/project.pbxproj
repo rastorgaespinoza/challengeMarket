@@ -44,6 +44,7 @@
 		C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */; };
 		C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */; };
 		C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */; };
+		C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteDTO.swift; sourceTree = "<group>"; };
 		C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteMapper.swift; sourceTree = "<group>"; };
 		C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailServiceLocator.swift; sourceTree = "<group>"; };
+		C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailFeaturesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A9322AD1F4D1002AA5B1 /* ProductDetailPageView.swift */,
+				C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,
+				C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,
 				C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */,
 				C640A9332AD1F4D1002AA5B1 /* ProductDetailPageView.swift in Sources */,

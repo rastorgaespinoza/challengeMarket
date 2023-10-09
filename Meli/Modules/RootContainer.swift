@@ -23,6 +23,16 @@ struct RootContainer: View {
           switch route {
           case let .product(product):
             ProductDetailPageView(product: product)
+              .navigationTitle("Detalle del producto")
+              .toolbarBackground(
+                Color.primary100,
+                for: .navigationBar
+              )
+              .toolbarBackground(.visible, for: .navigationBar)
+              .navigationBarTitleDisplayMode(.inline)
+          case let .productFeatures(features):
+            ProductDetailFeaturesView(productCharacteristics: features)
+              .navigationBarTitleDisplayMode(.inline)
           default:
             EmptyView()
           }
@@ -47,9 +57,14 @@ extension ProductDetailPageView {
   }
 }
 
+extension ProductDetailFeaturesView {
+  init(productCharacteristics: [ProductAttribute]) {
+    source = productCharacteristics.compactMap { Source(displayName: $0.name ?? "", value: $0.valueName ?? "") }
+  }
+}
+
 enum Route: Hashable {
   case search(String)
   case product(Product)
-  case related(Product)
   case productFeatures([ProductAttribute])
 }

@@ -6,13 +6,14 @@
 //
 
 import Combine
+import Foundation
 
 final class ProductDetailViewModel: ObservableObject {
   let productDetailUseCase: GetProductDetailUseCase
-  @Published var state: State = .neverLoading
+  @Published private(set) var state: DetailState = .neverLoading
   private var disposables = Set<AnyCancellable>()
 
-  enum State {
+  enum DetailState: Equatable {
     case neverLoading
     case loading
     case success(Product)
@@ -29,6 +30,7 @@ final class ProductDetailViewModel: ObservableObject {
 
   func getProductDetail(itemId: String) {
     state = .loading
+
     productDetailUseCase.getDetail(itemId: itemId)
       .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
@@ -37,7 +39,7 @@ final class ProductDetailViewModel: ObservableObject {
         }
       }, receiveValue: { [weak self] product in
         guard let self = self else { return }
-        state = .success(product)
+        self.state = .success(product)
       })
       .store(in: &disposables)
   }

@@ -5,7 +5,7 @@
 //  Created by Rodrigo Astorga Espinoza on 07-10-23.
 //
 
-struct Product: Identifiable, Hashable {
+struct Product: Identifiable, Hashable, Equatable {
   let id: String
   let title: String
   let price: Double?
@@ -15,16 +15,17 @@ struct Product: Identifiable, Hashable {
   let shipping: Shipping?
   let officialStoreName: String?
   let attributes: [ProductAttribute]
+  let pictures: [String]
 }
 
-struct Installments: Hashable {
+struct Installments: Hashable, Equatable {
   let quantity: Int
   let amount: Double
   let rate: Int
   let currencyID: String
 }
 
-struct Shipping: Hashable {
+struct Shipping: Hashable, Equatable {
   let storePickUp: Bool?
   let freeShipping: Bool?
   let logisticType: String?
@@ -32,7 +33,7 @@ struct Shipping: Hashable {
   let tags: [String]?
 }
 
-struct ProductAttribute: Hashable {
+struct ProductAttribute: Hashable, Equatable {
   let id: String?
   let name: String?
   let valueID: String?

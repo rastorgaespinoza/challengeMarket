@@ -8,7 +8,6 @@
 import Foundation
 
 final class ProductDetailServiceLocator {
-
   private var urlSessionHttpClient: HTTPClient {
     URLSessionHTTPClient()
   }
