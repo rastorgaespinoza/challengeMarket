@@ -37,7 +37,11 @@ struct ProductListPageView: View {
           }
           .padding(.top, 10)
         }
-        .searchable(text: $query, prompt: "Buscar en Mercado Libre")
+        .searchable(
+          text: $query,
+          placement: .navigationBarDrawer(displayMode: .always),
+          prompt: "Buscar en Mercado Libre"
+        )
 
       case .error:
         Text("error")
