@@ -26,6 +26,8 @@ struct ProductDetailPageView: View {
 
         prices
 
+        installments
+
         switch productDetailViewModel.state {
         case .neverLoading:
           Text("")
@@ -126,6 +128,24 @@ extension ProductDetailPageView {
         }
       }
     }
+  }
+
+  @ViewBuilder private var installments: some View {
+    if let installments = productDetail.installmentLabel {
+      Text(installmentsAttributed(installments))
+    }
+  }
+
+  private func installmentsAttributed(_ installmentLabel: String) -> AttributedString {
+    var start = AttributedString("en ")
+    start.font = .custom(ProximaNovaFont.regularSoft.rawValue, size: 16)
+    start.foregroundColor = .neutral200
+
+    var installment = AttributedString("\(installmentLabel)")
+    installment.font = .custom(ProximaNovaFont.regularSoft.rawValue, size: 16)
+    installment.foregroundColor = .success100
+
+    return start + installment
   }
 
   private func seeAllFeatures(_ product: Product) -> some View {
