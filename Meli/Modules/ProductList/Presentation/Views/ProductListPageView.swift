@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ProductListPageView: View {
+  @State var query = "iphone"
   @StateObject private var searchProductsViewModel = ProductListServiceLocator().searchProductsViewModel
-  @State private var query = "iphone"
-  @State private var searchIsPresented = true
 
   var body: some View {
     VStack {

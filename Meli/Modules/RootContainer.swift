@@ -12,30 +12,20 @@ struct RootContainer: View {
 
   var body: some View {
     NavigationStack(path: $path) {
-      ProductListPageView()
-        .navigationTitle("Buscador de productos")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(
-          Color.primary100,
-          for: .navigationBar
-        )
-        .toolbarBackground(.visible, for: .navigationBar)
+      ProductListPageView(query: "iphone")
+        .navigationStyleModifier(title: "Buscador de productos")
         .navigationDestination(for: Route.self) { route in
           switch route {
           case let .product(product):
             ProductDetailPageView(product: product)
-              .navigationTitle("Detalle del producto")
-              .toolbarBackground(
-                Color.primary100,
-                for: .navigationBar
-              )
-              .toolbarBackground(.visible, for: .navigationBar)
-              .navigationBarTitleDisplayMode(.inline)
+              .navigationStyleModifier(title: "Detalle del producto")
           case let .productFeatures(features):
             ProductDetailFeaturesView(productCharacteristics: features)
-              .navigationBarTitleDisplayMode(.inline)
-          default:
-            EmptyView()
+              .navigationStyleModifier(title: "Características")
+
+          case let .search(query):
+            ProductListPageView(query: query)
+              .navigationStyleModifier(title: "Buscador de productos")
           }
         }
     }

@@ -51,6 +51,7 @@
 		C699BDD12AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */; };
 		C699BDD32AD467AE00A07C03 /* ProductListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */; };
 		C699BDD52AD467C600A07C03 /* ProductListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */; };
+		C699BDD72AD4747B00A07C03 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD62AD4747B00A07C03 /* View+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListEmptyView.swift; sourceTree = "<group>"; };
 		C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListErrorView.swift; sourceTree = "<group>"; };
+		C699BDD62AD4747B00A07C03 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A9572AD36B0E002AA5B1 /* Font+extension.swift */,
+				C699BDD62AD4747B00A07C03 /* View+extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */,
 				C699BDCD2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift in Sources */,
 				C640A9792AD3A32C002AA5B1 /* ProductDetailRepository.swift in Sources */,
+				C699BDD72AD4747B00A07C03 /* View+extension.swift in Sources */,
 				C640A9472AD33FBE002AA5B1 /* ProductListServiceLocator.swift in Sources */,
 				C640A9732AD3A274002AA5B1 /* ProductDetailViewModel.swift in Sources */,
 				C640A9412AD33A41002AA5B1 /* HTTPClient.swift in Sources */,
