@@ -45,6 +45,7 @@
 		C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */; };
 		C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */; };
 		C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */; };
+		C699BDCB2AD4553500A07C03 /* proximanova-regular-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteMapper.swift; sourceTree = "<group>"; };
 		C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailServiceLocator.swift; sourceTree = "<group>"; };
 		C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailFeaturesView.swift; sourceTree = "<group>"; };
+		C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular-italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +378,7 @@
 		C640A9502AD3691C002AA5B1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */,
 				C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */,
 				C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */,
 				C640A9642AD37F42002AA5B1 /* proximanova-light.ttf */,
@@ -569,6 +572,7 @@
 				C640A8F32ACF840F002AA5B1 /* Preview Assets.xcassets in Resources */,
 				C640A96C2AD382F5002AA5B1 /* proximanovasoft-regular.otf in Resources */,
 				C640A9682AD37F42002AA5B1 /* proximanova-semibold.ttf in Resources */,
+				C699BDCB2AD4553500A07C03 /* proximanova-regular-italic.otf in Resources */,
 				C640A9662AD37F42002AA5B1 /* proximanova-regular.ttf in Resources */,
 				C640A96A2AD38227002AA5B1 /* proximanovasoft-medium.otf in Resources */,
 				C640A9672AD37F42002AA5B1 /* proximanova-light.ttf in Resources */,

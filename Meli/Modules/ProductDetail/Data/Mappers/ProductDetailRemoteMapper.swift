@@ -37,9 +37,11 @@ enum ProductDetailRemoteMapper {
       thumbnail: productRemote.thumbnail ?? "",
       installments: nil,
       shipping: shipping,
+      seller: nil,
       officialStoreName: nil,
       attributes: attributes,
-      pictures: (productRemote.pictures ?? []).compactMap({ $0.secureURL })
+      pictures: (productRemote.pictures ?? []).compactMap({ $0.secureURL }),
+      condition: productRemote.condition ?? ""
     )
   }
 }

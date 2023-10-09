@@ -13,9 +13,11 @@ struct Product: Identifiable, Hashable, Equatable {
   let thumbnail: String
   let installments: Installments?
   let shipping: Shipping?
+  let seller: Seller?
   let officialStoreName: String?
   let attributes: [ProductAttribute]
   let pictures: [String]
+  let condition: String
 }
 
 struct Installments: Hashable, Equatable {
@@ -23,6 +25,18 @@ struct Installments: Hashable, Equatable {
   let amount: Double
   let rate: Int
   let currencyID: String
+}
+
+struct Seller: Hashable, Equatable {
+  let id: Int?
+  let nickname: String?
+  let carDealer: Bool?
+  let realEstateAgency: Bool?
+  let empty: Bool?
+  let registrationDate: String?
+  let tags: [String]?
+  let carDealerLogo: String?
+  let permalink: String?
 }
 
 struct Shipping: Hashable, Equatable {

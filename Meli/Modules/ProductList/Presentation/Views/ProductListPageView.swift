@@ -60,7 +60,9 @@ extension ProductListRow {
       originalPrice: productEntity.originalPrice,
       installments: productEntity.installments,
       freeShipping: productEntity.shipping?.freeShipping ?? false,
-      officialStoreName: productEntity.officialStoreName
+      officialStoreName: productEntity.officialStoreName,
+      isUsed: productEntity.condition.lowercased() == "used",
+      isInternational: productEntity.seller?.tags?.contains("international_seller") ?? false
     )
     self.product = productRow
   }

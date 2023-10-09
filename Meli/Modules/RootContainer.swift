@@ -14,6 +14,7 @@ struct RootContainer: View {
     NavigationStack(path: $path) {
       ProductListPageView()
         .navigationTitle("Buscador de productos")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(
           Color.primary100,
           for: .navigationBar

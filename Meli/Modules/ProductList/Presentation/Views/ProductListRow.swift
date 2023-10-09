@@ -28,6 +28,10 @@ struct ProductListRow: View {
         shipping
 
         officialStoreName
+
+        condition
+
+        international
       }
 
       Spacer(minLength: .zero)
@@ -119,6 +123,23 @@ extension ProductListRow {
         .foregroundColor(.neutral400)
     }
   }
+
+  @ViewBuilder private var condition: some View {
+    if product.isUsed {
+      Text("Usado")
+        .customFont(.light, size: 12)
+        .foregroundColor(.neutral400)
+    }
+  }
+
+  @ViewBuilder private var international: some View {
+    if product.isInternational {
+      Text("COMPRA INTERNACIONAL")
+        .customFont(.regularItalic, size: 12)
+        .italic()
+        .foregroundColor(.link100)
+    }
+  }
 }
 
 extension ProductListRow {
@@ -131,6 +152,8 @@ extension ProductListRow {
     let installments: Installments?
     let freeShipping: Bool
     let officialStoreName: String?
+    let isUsed: Bool
+    let isInternational: Bool
 
     var imageURL: URL? {
       URL(string: thumbnail)
@@ -191,7 +214,9 @@ struct ProductListRow_Previews: PreviewProvider {
     originalPrice: 669_990,
     installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP"),
     freeShipping: true,
-    officialStoreName: "Apple"
+    officialStoreName: "Apple",
+    isUsed: false,
+    isInternational: false
   )
 
   static var previews: some View {

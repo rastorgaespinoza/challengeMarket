@@ -11,4 +11,5 @@ enum ProximaNovaFont: String {
   case semibold = "proximanova-semibold"
   case mediumSoft = "proximanovasoft-medium"
   case regularSoft = "proximanovasoft-regular"
+  case regularItalic = "proximanova-regular-italic"
 }

@@ -32,7 +32,7 @@ struct ProductRemoteDTO: Decodable {
   let tags: [String]?
   let shipping: ShippingRemoteDTO?
   let stopTime: String?
-  let seller: Seller?
+  let seller: SellerRemoteDTO?
   let sellerAddress: SellerAddress?
   let address: Address?
   let attributes: [AttributeRemoteDTO]?
@@ -161,7 +161,7 @@ struct InstallmentsRemoteDTO: Codable {
 }
 
 // MARK: - Seller
-struct Seller: Codable {
+struct SellerRemoteDTO: Codable {
   let id: Int?
   let nickname: String?
   let carDealer: Bool?

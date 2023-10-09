@@ -31,6 +31,21 @@ extension Array where Element == ProductRemoteDTO {
         )
       }
 
+      var seller: Seller?
+      if let sellerRemote = $0.seller {
+        seller = Seller(
+          id: sellerRemote.id,
+          nickname: sellerRemote.nickname,
+          carDealer: sellerRemote.carDealer,
+          realEstateAgency: sellerRemote.realEstateAgency,
+          empty: sellerRemote.empty,
+          registrationDate: sellerRemote.registrationDate,
+          tags: sellerRemote.tags,
+          carDealerLogo: sellerRemote.carDealerLogo,
+          permalink: sellerRemote.permalink
+        )
+      }
+
       return Product(
         id: $0.id ?? "",
         title: $0.title ?? "",
@@ -39,9 +54,11 @@ extension Array where Element == ProductRemoteDTO {
         thumbnail: $0.thumbnail ?? "",
         installments: installments,
         shipping: shipping,
+        seller: seller,
         officialStoreName: $0.officialStoreName,
         attributes: [],
-        pictures: []
+        pictures: [],
+        condition: $0.condition ?? ""
       )
     }
   }

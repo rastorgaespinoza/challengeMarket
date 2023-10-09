@@ -101,7 +101,6 @@ extension ProductDetailPageView {
     }
     .frame(width: .infinity)
     .aspectRatio(0.9, contentMode: .fit)
-//    .frame(width: 140, height: 300)
     .background(Color(uiColor: UIColor.secondarySystemBackground))
     .cornerRadius(8)
   }
