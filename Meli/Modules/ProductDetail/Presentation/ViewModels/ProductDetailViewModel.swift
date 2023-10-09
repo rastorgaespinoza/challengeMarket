@@ -27,7 +27,7 @@ final class ProductDetailViewModel: ObservableObject {
     disposables.forEach { $0.cancel() }
   }
 
-  func searchProducts(itemId: String) {
+  func getProductDetail(itemId: String) {
     state = .loading
     productDetailUseCase.getDetail(itemId: itemId)
       .sink(receiveCompletion: { [weak self] completion in

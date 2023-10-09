@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductDetailPageView: View {
   let productDetail: ProductDetail
+  @StateObject private var productDetailViewModel = ProductDetailServiceLocator().productDetailViewModel
 
   init(productDetail: ProductDetail) {
     self.productDetail = productDetail
@@ -19,6 +20,23 @@ struct ProductDetailPageView: View {
       Text(productDetail.title)
 
       image
+
+//      switch productDetailViewModel.state {
+//      case .neverLoading:
+//        Text("neverLoading")
+//      case .loading:
+//        ProgressView()
+//          .frame(maxWidth: .infinity)
+//      case .success(let product):
+//        Text("success")
+//      case .error:
+//        Text("error")
+//      }
+
+      Spacer()
+    }
+    .onAppear {
+      productDetailViewModel.getProductDetail(itemId: productDetail.id)
     }
   }
 }
