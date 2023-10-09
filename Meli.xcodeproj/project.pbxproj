@@ -40,6 +40,9 @@
 		C640A9772AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */; };
 		C640A9792AD3A32C002AA5B1 /* ProductDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */; };
 		C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */; };
+		C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A97E2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift */; };
+		C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */; };
+		C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDetailUseCase.swift; sourceTree = "<group>"; };
 		C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRepository.swift; sourceTree = "<group>"; };
 		C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDetailUseCaseImpl.swift; sourceTree = "<group>"; };
+		C640A97E2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRepositoryRemoteImpl.swift; sourceTree = "<group>"; };
+		C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteDTO.swift; sourceTree = "<group>"; };
+		C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +383,9 @@
 		C640A96F2AD3A24D002AA5B1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C640A9812AD3A4A1002AA5B1 /* Models */,
+				C640A9802AD3A492002AA5B1 /* Mappers */,
+				C640A97D2AD3A412002AA5B1 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -413,6 +422,30 @@
 				C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C640A97D2AD3A412002AA5B1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C640A97E2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C640A9802AD3A492002AA5B1 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		C640A9812AD3A4A1002AA5B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,11 +598,14 @@
 				C640A93C2AD30475002AA5B1 /* SearchProductsRepositoryRemoteImpl.swift in Sources */,
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,
 				C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */,
+				C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */,
 				C640A9392AD30444002AA5B1 /* SearchProductsRepository.swift in Sources */,
 				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
+				C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */,
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
+				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,
 				C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */,
 				C640A9332AD1F4D1002AA5B1 /* ProductDetailPageView.swift in Sources */,
