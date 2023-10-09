@@ -23,7 +23,14 @@ final class ProductDetailServiceLocator {
     GetProductDetailUseCaseImpl(repository: productDetailRepositoryRemoteImpl)
   }
 
+  private var getProductDescriptionUseCaseImpl: GetProductDescriptionUseCase {
+    GetProductDescriptionUseCaseImpl(repository: productDetailRepositoryRemoteImpl)
+  }
+
   var productDetailViewModel: ProductDetailViewModel {
-    ProductDetailViewModel(productDetailUseCase: getProductDetailUseCaseImpl)
+    ProductDetailViewModel(
+      productDetailUseCase: getProductDetailUseCaseImpl,
+      productDescriptionUseCase: getProductDescriptionUseCaseImpl
+    )
   }
 }

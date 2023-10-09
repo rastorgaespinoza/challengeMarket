@@ -46,6 +46,9 @@
 		C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */; };
 		C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */; };
 		C699BDCB2AD4553500A07C03 /* proximanova-regular-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */; };
+		C699BDCD2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */; };
+		C699BDCF2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDCE2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift */; };
+		C699BDD12AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,9 @@
 		C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailServiceLocator.swift; sourceTree = "<group>"; };
 		C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailFeaturesView.swift; sourceTree = "<group>"; };
 		C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular-italic.otf"; sourceTree = "<group>"; };
+		C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescriptionUseCase.swift; sourceTree = "<group>"; };
+		C699BDCE2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescriptionUseCaseImpl.swift; sourceTree = "<group>"; };
+		C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionRemoteDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +427,7 @@
 			children = (
 				C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */,
 				C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */,
+				C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */,
 			);
 			path = Ports;
 			sourceTree = "<group>";
@@ -429,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */,
+				C699BDCE2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */,
+				C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -603,10 +612,12 @@
 			files = (
 				C640A93F2AD338E2002AA5B1 /* SearchProductsRemoteMapper.swift in Sources */,
 				C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */,
+				C699BDCD2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift in Sources */,
 				C640A9792AD3A32C002AA5B1 /* ProductDetailRepository.swift in Sources */,
 				C640A9472AD33FBE002AA5B1 /* ProductListServiceLocator.swift in Sources */,
 				C640A9732AD3A274002AA5B1 /* ProductDetailViewModel.swift in Sources */,
 				C640A9412AD33A41002AA5B1 /* HTTPClient.swift in Sources */,
+				C699BDCF2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift in Sources */,
 				C640A96E2AD397D4002AA5B1 /* RootContainer.swift in Sources */,
 				C640A9372AD303EC002AA5B1 /* SearchProductsUseCase.swift in Sources */,
 				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
@@ -617,6 +628,7 @@
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,
 				C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */,
 				C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */,
+				C699BDD12AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift in Sources */,
 				C640A9392AD30444002AA5B1 /* SearchProductsRepository.swift in Sources */,
 				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,

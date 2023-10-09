@@ -11,6 +11,7 @@ struct ProductDetailPageView: View {
   let productDetail: ProductDetail
   @StateObject private var productDetailViewModel = ProductDetailServiceLocator().productDetailViewModel
   @State private var product: Product?
+  @State private var description: String?
   @State private var currentImage: String = ""
 
   init(productDetail: ProductDetail) {
@@ -19,7 +20,7 @@ struct ProductDetailPageView: View {
 
   var body: some View {
     ScrollView {
-      LazyVStack(alignment: .leading, spacing: 8) {
+      LazyVStack(alignment: .leading, spacing: 16) {
         Text(productDetail.title)
 
         imageContainer
@@ -28,21 +29,11 @@ struct ProductDetailPageView: View {
 
         installments
 
-        switch productDetailViewModel.state {
-        case .neverLoading:
-          Text("")
-            .onAppear {
-              productDetailViewModel.getProductDetail(itemId: productDetail.id)
-            }
-        case .loading:
-          ProgressView()
-            .frame(maxWidth: .infinity)
-        case let .success(product):
-          seeAllFeatures(product)
+        detailFeatures
 
-        case .error:
-          EmptyView()
-        }
+        Divider()
+
+        descriptionProduct
 
         Spacer()
       }
@@ -101,7 +92,7 @@ extension ProductDetailPageView {
         Color(uiColor: UIColor.secondarySystemBackground)
       }
     }
-    .frame(width: .infinity)
+    .frame(maxWidth: .infinity)
     .aspectRatio(0.9, contentMode: .fit)
     .background(Color(uiColor: UIColor.secondarySystemBackground))
     .cornerRadius(8)
@@ -127,6 +118,24 @@ extension ProductDetailPageView {
             .foregroundColor(.success100)
         }
       }
+    }
+  }
+
+  @ViewBuilder private var detailFeatures: some View {
+    switch productDetailViewModel.state {
+    case .neverLoading:
+      Text("")
+        .onAppear {
+          productDetailViewModel.getProductDetail(itemId: productDetail.id)
+        }
+    case .loading:
+      ProgressView()
+        .frame(maxWidth: .infinity)
+    case let .success(product):
+      seeAllFeatures(product)
+
+    case .error:
+      EmptyView()
     }
   }
 
@@ -160,6 +169,34 @@ extension ProductDetailPageView {
       .padding()
       .overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(Color.neutral400, lineWidth: 1))
     }
+  }
+
+  @ViewBuilder private var descriptionProduct: some View {
+    switch productDetailViewModel.stateDescription {
+    case .neverLoading:
+      Text("")
+        .onAppear {
+          productDetailViewModel.getProductDescription(itemId: productDetail.id)
+        }
+    case .loading, .error:
+      EmptyView()
+
+    case let .success(description):
+      descriptionLabel(description)
+    }
+  }
+
+  private func descriptionLabel(_ description: String) -> some View {
+    VStack(alignment: .leading, spacing: 16) {
+      Text("Descripción")
+        .customFont(.regular, size: 24)
+
+      Text(description)
+        .customFont(.regular, size: 16)
+        .multilineTextAlignment(.leading)
+        .lineSpacing(5)
+    }
+    .foregroundColor(.neutral200)
   }
 }
 

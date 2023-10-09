@@ -9,8 +9,10 @@ import Combine
 import Foundation
 
 final class ProductDetailViewModel: ObservableObject {
-  let productDetailUseCase: GetProductDetailUseCase
+  private let productDetailUseCase: GetProductDetailUseCase
+  private let productDescriptionUseCase: GetProductDescriptionUseCase
   @Published private(set) var state: DetailState = .neverLoading
+  @Published private(set) var stateDescription: DescriptionState = .neverLoading
   private var disposables = Set<AnyCancellable>()
 
   enum DetailState: Equatable {
@@ -20,8 +22,16 @@ final class ProductDetailViewModel: ObservableObject {
     case error
   }
 
-  init(productDetailUseCase: GetProductDetailUseCase) {
+  enum DescriptionState: Equatable {
+    case neverLoading
+    case loading
+    case success(String)
+    case error
+  }
+
+  init(productDetailUseCase: GetProductDetailUseCase, productDescriptionUseCase: GetProductDescriptionUseCase) {
     self.productDetailUseCase = productDetailUseCase
+    self.productDescriptionUseCase = productDescriptionUseCase
   }
 
   deinit {
@@ -40,6 +50,22 @@ final class ProductDetailViewModel: ObservableObject {
       }, receiveValue: { [weak self] product in
         guard let self = self else { return }
         self.state = .success(product)
+      })
+      .store(in: &disposables)
+  }
+
+  func getProductDescription(itemId: String) {
+    stateDescription = .loading
+
+    productDescriptionUseCase.getDescription(itemId: itemId)
+      .sink(receiveCompletion: { [weak self] completion in
+        guard let self = self else { return }
+        if case .failure = completion {
+          self.stateDescription = .error
+        }
+      }, receiveValue: { [weak self] description in
+        guard let self = self else { return }
+        self.stateDescription = .success(description)
       })
       .store(in: &disposables)
   }

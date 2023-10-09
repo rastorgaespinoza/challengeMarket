@@ -42,4 +42,26 @@ final class ProductDetailRepositoryRemoteImpl: ProductDetailRepository {
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
   }
+
+  func getDescription(itemId: String) -> AnyPublisher<String, Swift.Error> {
+    let urlWithItemID = url.appending(path: itemId).appending(path: "/description")
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .secondsSince1970
+
+    return client.getPublisherDataTask(from: urlWithItemID)
+      .tryMap { element -> Data in
+        guard let httpResponse = element.response as? HTTPURLResponse else {
+          throw Error.invalidData
+        }
+        if httpResponse.statusCode == 200 {
+          return element.data
+        } else {
+          throw Error.invalidData
+        }
+      }
+      .decode(type: ProductDetailDescriptionRemoteDTO.self, decoder: decoder)
+      .map { $0.plainText }
+      .receive(on: DispatchQueue.main)
+      .eraseToAnyPublisher()
+  }
 }

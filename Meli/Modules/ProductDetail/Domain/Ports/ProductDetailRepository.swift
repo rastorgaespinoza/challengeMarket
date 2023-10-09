@@ -9,4 +9,5 @@ import Combine
 
 protocol ProductDetailRepository {
   func getDetail(itemId: String) -> AnyPublisher<Product, Error>
+  func getDescription(itemId: String) -> AnyPublisher<String, Error>
 }
