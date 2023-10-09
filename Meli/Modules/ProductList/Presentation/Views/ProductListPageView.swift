@@ -9,34 +9,45 @@ import SwiftUI
 
 struct ProductListPageView: View {
   @StateObject private var searchProductsViewModel = ProductListServiceLocator().searchProductsViewModel
-  @State private var query = ""
+  @State private var query = "iphone"
 
   var body: some View {
-    switch searchProductsViewModel.state {
-    case .neverLoading:
-      Text("nothing happens")
-        .onAppear {
-          searchProductsViewModel.searchProducts(query: "iphone")
-        }
-    case .loading:
-      ProgressView()
-    case .success(let products):
-      ScrollView {
-        VStack {
-          ForEach(products) { productEntity in
-            ProductListRow(productEntity: productEntity)
+    VStack {
+      switch searchProductsViewModel.state {
+      case .neverLoading:
+        Text("nothing happens")
+          .onAppear {
+            searchProductsViewModel.searchProducts(query: query)
           }
+      case .loading:
+        ProgressView()
+      case .success(let products):
+//        ScrollView {
+//          VStack {
+//            ForEach(products) { productEntity in
+//              ProductListRow(productEntity: productEntity)
+//            }
+//          }
+//        }
+
+        List(products) { product in
+          ProductListRow(productEntity: product)
+            .listRowInsets(.init())
+            .listRowSeparator(.hidden, edges: .all)
+            .listRowSeparator(.visible, edges: .bottom)
+            .padding(8)
         }
+        .listStyle(.grouped)
+        .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Buscar en Mercado Libre")
+
+      case .error:
+        Text("error")
       }
-
-//      List(products) { product in
-//        ProductListRow(productEntity: product)
-//      }
-      .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Buscar en Mercado Libre")
-
-    case .error:
-      Text("error")
     }
+    .onSubmit(of: .search) {
+      searchProductsViewModel.searchProducts(query: query)
+    }
+
   }
 }
 
@@ -47,7 +58,8 @@ extension ProductListRow {
       title: productEntity.title,
       thumbnail: productEntity.thumbnail,
       price: productEntity.price ?? 0.0,
-      originalPrice: productEntity.originalPrice
+      originalPrice: productEntity.originalPrice,
+      installments: productEntity.installments
     )
     self.product = productRow
   }

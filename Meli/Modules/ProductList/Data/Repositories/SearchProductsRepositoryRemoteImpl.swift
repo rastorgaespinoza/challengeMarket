@@ -44,17 +44,3 @@ final class SearchProductsRepositoryRemoteImpl: SearchProductsRepository {
       .eraseToAnyPublisher()
   }
 }
-
-private extension Array where Element == ProductRemoteDTO {
-  func toModels() -> [Product] {
-    return map {
-      Product(
-        id: $0.id ?? "",
-        title: $0.title ?? "",
-        price: $0.price,
-        originalPrice: $0.originalPrice,
-        thumbnail: $0.thumbnail ?? ""
-      )
-    }
-  }
-}

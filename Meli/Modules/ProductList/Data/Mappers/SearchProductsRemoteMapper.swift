@@ -7,20 +7,27 @@
 
 import Foundation
 
-final class SearchProductsRemoteMapper {
-  private struct Root: Decodable {
-    let items: [ProductRemoteDTO]
-  }
+extension Array where Element == ProductRemoteDTO {
+  func toModels() -> [Product] {
+    return map {
+      var installments: Installments?
+      if let installmentsRemote = $0.installments {
+        installments = Installments(
+          quantity: installmentsRemote.quantity ?? 0,
+          amount: installmentsRemote.amount ?? 0,
+          rate: installmentsRemote.rate ?? 0,
+          currencyID: installmentsRemote.currencyID ?? ""
+        )
+      }
 
-  private static var OK_200: Int {
-    return 200
-  }
-
-  internal static func map(_ data: Data, response: HTTPURLResponse) throws -> [ProductRemoteDTO] {
-    guard response.statusCode == OK_200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
-      throw SearchProductsRepositoryRemoteImpl.Error.invalidData
+      return Product(
+        id: $0.id ?? "",
+        title: $0.title ?? "",
+        price: $0.price,
+        originalPrice: $0.originalPrice,
+        thumbnail: $0.thumbnail ?? "",
+        installments: installments
+      )
     }
-
-    return root.items
   }
 }

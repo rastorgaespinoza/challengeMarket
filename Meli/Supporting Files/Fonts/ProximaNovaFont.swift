@@ -1,18 +1,14 @@
 //
-//  InterFont.swift
+//  ProximaNovaFont.swift
 //  Meli
 //
 //  Created by Rodrigo Astorga Espinoza on 08-10-23.
 //
 
-enum InterFont: String {
-  case regular = "Inter-Regular"
-  case medium = "Inter-Medium"
-}
-
 enum ProximaNovaFont: String {
-  case regular = "ProximaNova-Regular"
-  case semibold = "ProximaNova-Semibold"
-  case thin = "ProximaNova-Thin"
-  case light = "ProximaNova-Light"
+  case light = "proximanova-light"
+  case regular = "proximanova-regular"
+  case semibold = "proximanova-semibold"
+  case mediumSoft = "proximanovasoft-medium"
+  case regularSoft = "proximanovasoft-regular"
 }

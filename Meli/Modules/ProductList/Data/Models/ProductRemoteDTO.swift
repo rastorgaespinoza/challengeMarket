@@ -37,7 +37,7 @@ struct ProductRemoteDTO: Decodable {
   let sellerAddress: SellerAddress?
   let address: Address?
   let attributes: [Attribute]?
-  let installments: Installments?
+  let installments: InstallmentsRemoteDTO?
 //  let winnerItemID: JSONNull?
   let catalogListing: Bool?
 //  let discounts: JSONNull?
@@ -154,7 +154,7 @@ struct DifferentialPricing: Codable {
 }
 
 // MARK: - Installments
-struct Installments: Codable {
+struct InstallmentsRemoteDTO: Codable {
   let quantity: Int?
   let amount: Double?
   let rate: Int?

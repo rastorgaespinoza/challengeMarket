@@ -16,40 +16,82 @@ struct ProductListRow: View {
 
   var body: some View {
     HStack(alignment: .top, spacing: 10) {
-      AsyncImage(url: product.imageURL) { phase in
-        if let image = phase.image {
-          image
-            .resizable()
-            .scaledToFit()
-
-        } else if phase.error != nil {
-          Color(uiColor: UIColor.systemBackground)
-
-        } else {
-          Color(uiColor: UIColor.systemBackground)
-
-        }
-      }
-      .frame(width: 90)
-      .frame(height: 90)
-      .background(Color(uiColor: UIColor.secondarySystemBackground))
-      .cornerRadius(8)
+      image
 
       VStack(alignment: .leading, spacing: 8) {
-        Text(product.title)
-        //Text("rating goes here")
-        VStack(alignment: .leading, spacing: 2) {
-          if let originalPrice = product.originalPriceFormatted {
-            Text(originalPrice)
-              .strikethrough()
-          }
+        title
 
-          Text(product.priceFormatted)
+        prices
+
+        if let installments = product.installmentLabel {
+          Text(installmentsAttributed(installments))
         }
       }
 
       Spacer(minLength: .zero)
     }
+  }
+}
+
+extension ProductListRow {
+  private var image: some View {
+    AsyncImage(url: product.imageURL) { phase in
+      if let image = phase.image {
+        image
+          .resizable()
+          .scaledToFit()
+
+      } else if phase.error != nil {
+        Color(uiColor: UIColor.secondarySystemBackground)
+
+      } else {
+        Color(uiColor: UIColor.secondarySystemBackground)
+      }
+    }
+    .frame(width: 140, height: 140)
+    .background(Color(uiColor: UIColor.secondarySystemBackground))
+    .cornerRadius(8)
+  }
+
+  private var title: some View {
+    Text(product.title)
+      .customFont(.regularSoft, size: 14)
+      .foregroundColor(.neutral200)
+      .lineLimit(3)
+  }
+
+  private var prices: some View {
+    VStack(alignment: .leading, spacing: 4) {
+      if let originalPrice = product.originalPriceFormatted {
+        Text(originalPrice)
+          .strikethrough()
+          .customFont(.light, size: 11)
+          .foregroundColor(.neutral300)
+      }
+
+      HStack(spacing: 8) {
+        Text(product.priceFormatted)
+          .customFont(.mediumSoft, size: 20)
+
+        if let discount = product.discount {
+          Text("\(discount)% OFF")
+            .customFont(.light, size: 12)
+            .foregroundColor(.success100)
+        }
+      }
+    }
+  }
+
+  func installmentsAttributed(_ installmentLabel: String) -> AttributedString {
+    var start = AttributedString("en ")
+    start.font = .custom(ProximaNovaFont.regularSoft.rawValue, size: 12)
+    start.foregroundColor = .neutral200
+
+    var installment = AttributedString("\(installmentLabel)")
+    installment.font = .custom(ProximaNovaFont.regularSoft.rawValue, size: 12)
+    installment.foregroundColor = .success100
+
+    return start + installment
   }
 }
 
@@ -60,7 +102,11 @@ extension ProductListRow {
     let thumbnail: String
     let price: Double
     let originalPrice: Double?
+    let installments: Installments?
 
+    var imageURL: URL? {
+      URL(string: thumbnail)
+    }
 
     var priceFormatted: String {
       formatPrice(price: price)
@@ -73,8 +119,28 @@ extension ProductListRow {
       return formatPrice(price: originalPrice)
     }
 
-    var imageURL: URL? {
-      URL(string: thumbnail)
+    var discount: Int? {
+      guard  let originalPrice = originalPrice, price < originalPrice else { return nil }
+
+      let discount = getDiscount(offerPrice: price, originalPrice: originalPrice)
+      return discount
+    }
+
+    private func getDiscount(offerPrice: Double, originalPrice: Double) -> Int {
+      let divived = offerPrice / originalPrice
+      if divived == 1.0 {
+        return 0
+      }
+
+      let discount: Double = (divived * 100.0)
+      let roundedDiscount = Int(round(discount)) - 100
+      return abs(roundedDiscount)
+    }
+
+    var installmentLabel: String? {
+      guard let installments = installments, installments.quantity > 1 else { return nil }
+
+      return "\(installments.quantity)x \(formatPrice(price: round(installments.amount))) sin interés"
     }
 
     private func formatPrice(price: Double) -> String {
@@ -82,7 +148,7 @@ extension ProductListRow {
       formatter.groupingSeparator = "."
       formatter.numberStyle = .decimal
       let priceFormatted = formatter.string(for: price)!
-      return "$" + priceFormatted
+      return "$ " + priceFormatted
     }
   }
 }
@@ -94,7 +160,8 @@ struct ProductListRow_Previews: PreviewProvider {
     title: "Apple iPhone 11 (64 GB) - Negro - Distribuidor autorizado",
     thumbnail: "http://http2.mlstatic.com/D_962169-MLA46153276294_052021-I.jpg",
     price: 389_990,
-    originalPrice: 669_990
+    originalPrice: 669_990,
+    installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP")
   )
 
   static var previews: some View {

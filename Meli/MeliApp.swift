@@ -13,6 +13,12 @@ struct MeliApp: App {
     WindowGroup {
       NavigationStack {
         ProductListPageView()
+          .navigationTitle("Buscador de productos")
+          .toolbarBackground(
+            Color.primary100,
+            for: .navigationBar
+          )
+          .toolbarBackground(.visible, for: .navigationBar)
       }
     }
   }

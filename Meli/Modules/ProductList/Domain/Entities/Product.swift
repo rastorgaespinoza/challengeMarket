@@ -11,4 +11,12 @@ struct Product: Identifiable {
   let price: Double?
   let originalPrice: Double?
   let thumbnail: String
+  let installments: Installments?
+}
+
+struct Installments {
+  let quantity: Int
+  let amount: Double
+  let rate: Int
+  let currencyID: String
 }

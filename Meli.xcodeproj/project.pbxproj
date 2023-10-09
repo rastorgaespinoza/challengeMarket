@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */; };
-		C640A8EE2ACF840E002AA5B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A8ED2ACF840E002AA5B1 /* ContentView.swift */; };
 		C640A8F02ACF840F002AA5B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */; };
 		C640A8F32ACF840F002AA5B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C640A8F22ACF840F002AA5B1 /* Preview Assets.xcassets */; };
 		C640A8FD2ACF840F002AA5B1 /* MeliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A8FC2ACF840F002AA5B1 /* MeliTests.swift */; };
@@ -29,6 +28,13 @@
 		C640A9492AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9482AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift */; };
 		C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A94B2AD34450002AA5B1 /* SearchProductsViewModel.swift */; };
 		C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A94D2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift */; };
+		C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9572AD36B0E002AA5B1 /* Font+extension.swift */; };
+		C640A95A2AD36B29002AA5B1 /* ProximaNovaFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9592AD36B29002AA5B1 /* ProximaNovaFont.swift */; };
+		C640A9662AD37F42002AA5B1 /* proximanova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9632AD37F42002AA5B1 /* proximanova-regular.ttf */; };
+		C640A9672AD37F42002AA5B1 /* proximanova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9642AD37F42002AA5B1 /* proximanova-light.ttf */; };
+		C640A9682AD37F42002AA5B1 /* proximanova-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9652AD37F42002AA5B1 /* proximanova-semibold.ttf */; };
+		C640A96A2AD38227002AA5B1 /* proximanovasoft-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */; };
+		C640A96C2AD382F5002AA5B1 /* proximanovasoft-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +57,6 @@
 /* Begin PBXFileReference section */
 		C640A8E82ACF840E002AA5B1 /* Meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliApp.swift; sourceTree = "<group>"; };
-		C640A8ED2ACF840E002AA5B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C640A8F22ACF840F002AA5B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C640A8F82ACF840F002AA5B1 /* MeliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,13 @@
 		C640A9482AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsUseCaseImpl.swift; sourceTree = "<group>"; };
 		C640A94B2AD34450002AA5B1 /* SearchProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsViewModel.swift; sourceTree = "<group>"; };
 		C640A94D2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListSearchResultRemoteDTO.swift; sourceTree = "<group>"; };
+		C640A9572AD36B0E002AA5B1 /* Font+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+extension.swift"; sourceTree = "<group>"; };
+		C640A9592AD36B29002AA5B1 /* ProximaNovaFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximaNovaFont.swift; sourceTree = "<group>"; };
+		C640A9632AD37F42002AA5B1 /* proximanova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.ttf"; sourceTree = "<group>"; };
+		C640A9642AD37F42002AA5B1 /* proximanova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.ttf"; sourceTree = "<group>"; };
+		C640A9652AD37F42002AA5B1 /* proximanova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.ttf"; sourceTree = "<group>"; };
+		C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-medium.otf"; sourceTree = "<group>"; };
+		C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +137,13 @@
 		C640A8EA2ACF840E002AA5B1 /* Meli */ = {
 			isa = PBXGroup;
 			children = (
-				C640A92E2AD1E55A002AA5B1 /* Info.plist */,
-				C640A9262AD1E06E002AA5B1 /* Utils */,
-				C640A9152AD1C459002AA5B1 /* Modules */,
-				C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */,
-				C640A8ED2ACF840E002AA5B1 /* ContentView.swift */,
 				C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */,
+				C640A92E2AD1E55A002AA5B1 /* Info.plist */,
+				C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */,
+				C640A9152AD1C459002AA5B1 /* Modules */,
 				C640A8F12ACF840F002AA5B1 /* Preview Content */,
+				C640A94F2AD36909002AA5B1 /* Supporting Files */,
+				C640A9262AD1E06E002AA5B1 /* Utils */,
 			);
 			path = Meli;
 			sourceTree = "<group>";
@@ -247,6 +259,7 @@
 		C640A9262AD1E06E002AA5B1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C640A9572AD36B0E002AA5B1 /* Font+extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -332,6 +345,27 @@
 				C640A94B2AD34450002AA5B1 /* SearchProductsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C640A94F2AD36909002AA5B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9502AD3691C002AA5B1 /* Fonts */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C640A9502AD3691C002AA5B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */,
+				C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */,
+				C640A9642AD37F42002AA5B1 /* proximanova-light.ttf */,
+				C640A9632AD37F42002AA5B1 /* proximanova-regular.ttf */,
+				C640A9652AD37F42002AA5B1 /* proximanova-semibold.ttf */,
+				C640A9592AD36B29002AA5B1 /* ProximaNovaFont.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +473,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C640A8F32ACF840F002AA5B1 /* Preview Assets.xcassets in Resources */,
+				C640A96C2AD382F5002AA5B1 /* proximanovasoft-regular.otf in Resources */,
+				C640A9682AD37F42002AA5B1 /* proximanova-semibold.ttf in Resources */,
+				C640A9662AD37F42002AA5B1 /* proximanova-regular.ttf in Resources */,
+				C640A96A2AD38227002AA5B1 /* proximanovasoft-medium.otf in Resources */,
+				C640A9672AD37F42002AA5B1 /* proximanova-light.ttf in Resources */,
 				C640A8F02ACF840F002AA5B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,19 +504,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C640A93F2AD338E2002AA5B1 /* SearchProductsRemoteMapper.swift in Sources */,
-				C640A8EE2ACF840E002AA5B1 /* ContentView.swift in Sources */,
 				C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */,
 				C640A9472AD33FBE002AA5B1 /* ProductListServiceLocator.swift in Sources */,
 				C640A9412AD33A41002AA5B1 /* HTTPClient.swift in Sources */,
 				C640A9372AD303EC002AA5B1 /* SearchProductsUseCase.swift in Sources */,
 				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
 				C640A9492AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift in Sources */,
+				C640A95A2AD36B29002AA5B1 /* ProximaNovaFont.swift in Sources */,
 				C640A93C2AD30475002AA5B1 /* SearchProductsRepositoryRemoteImpl.swift in Sources */,
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,
 				C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */,
 				C640A9392AD30444002AA5B1 /* SearchProductsRepository.swift in Sources */,
 				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
+				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,
 				C640A9332AD1F4D1002AA5B1 /* ProductDetailPageView.swift in Sources */,
