@@ -23,9 +23,9 @@ struct ProductListRow: View {
 
         prices
 
-        if let installments = product.installmentLabel {
-          Text(installmentsAttributed(installments))
-        }
+        installments
+
+        shipping
       }
 
       Spacer(minLength: .zero)
@@ -82,7 +82,13 @@ extension ProductListRow {
     }
   }
 
-  func installmentsAttributed(_ installmentLabel: String) -> AttributedString {
+  @ViewBuilder private var installments: some View {
+    if let installments = product.installmentLabel {
+      Text(installmentsAttributed(installments))
+    }
+  }
+
+  private func installmentsAttributed(_ installmentLabel: String) -> AttributedString {
     var start = AttributedString("en ")
     start.font = .custom(ProximaNovaFont.regularSoft.rawValue, size: 12)
     start.foregroundColor = .neutral200
@@ -92,6 +98,14 @@ extension ProductListRow {
     installment.foregroundColor = .success100
 
     return start + installment
+  }
+
+  @ViewBuilder private var shipping: some View {
+    if product.freeShipping {
+      Text("Envío gratis")
+        .customFont(.semibold, size: 12)
+        .foregroundColor(.success100)
+    }
   }
 }
 
@@ -103,6 +117,7 @@ extension ProductListRow {
     let price: Double
     let originalPrice: Double?
     let installments: Installments?
+    let freeShipping: Bool
 
     var imageURL: URL? {
       URL(string: thumbnail)
@@ -161,7 +176,8 @@ struct ProductListRow_Previews: PreviewProvider {
     thumbnail: "http://http2.mlstatic.com/D_962169-MLA46153276294_052021-I.jpg",
     price: 389_990,
     originalPrice: 669_990,
-    installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP")
+    installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP"),
+    freeShipping: true
   )
 
   static var previews: some View {

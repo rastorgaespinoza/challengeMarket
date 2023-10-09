@@ -20,13 +20,25 @@ extension Array where Element == ProductRemoteDTO {
         )
       }
 
+      var shipping: Shipping?
+      if let shippingRemote = $0.shipping {
+        shipping = Shipping(
+          storePickUp: shippingRemote.storePickUp,
+          freeShipping: shippingRemote.freeShipping,
+          logisticType: shippingRemote.logisticType,
+          mode: shippingRemote.mode,
+          tags: shippingRemote.tags
+        )
+      }
+
       return Product(
         id: $0.id ?? "",
         title: $0.title ?? "",
         price: $0.price,
         originalPrice: $0.originalPrice,
         thumbnail: $0.thumbnail ?? "",
-        installments: installments
+        installments: installments,
+        shipping: shipping
       )
     }
   }

@@ -12,6 +12,7 @@ struct Product: Identifiable {
   let originalPrice: Double?
   let thumbnail: String
   let installments: Installments?
+  let shipping: Shipping?
 }
 
 struct Installments {
@@ -19,4 +20,12 @@ struct Installments {
   let amount: Double
   let rate: Int
   let currencyID: String
+}
+
+struct Shipping {
+  let storePickUp: Bool?
+  let freeShipping: Bool?
+  let logisticType: String?
+  let mode: String?
+  let tags: [String]?
 }

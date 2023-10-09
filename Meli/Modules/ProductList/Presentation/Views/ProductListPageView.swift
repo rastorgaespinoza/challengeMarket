@@ -59,7 +59,8 @@ extension ProductListRow {
       thumbnail: productEntity.thumbnail,
       price: productEntity.price ?? 0.0,
       originalPrice: productEntity.originalPrice,
-      installments: productEntity.installments
+      installments: productEntity.installments,
+      freeShipping: productEntity.shipping?.freeShipping ?? false
     )
     self.product = productRow
   }

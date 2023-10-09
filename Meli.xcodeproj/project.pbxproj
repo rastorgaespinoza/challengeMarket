@@ -178,16 +178,8 @@
 			children = (
 				C640A9182AD1C472002AA5B1 /* ProductDetail */,
 				C640A9172AD1C469002AA5B1 /* ProductList */,
-				C640A9162AD1C462002AA5B1 /* Home */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		C640A9162AD1C462002AA5B1 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		C640A9172AD1C469002AA5B1 /* ProductList */ = {

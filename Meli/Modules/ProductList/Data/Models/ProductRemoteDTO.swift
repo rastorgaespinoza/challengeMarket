@@ -24,24 +24,20 @@ struct ProductRemoteDTO: Decodable {
   let orderBackend: Int?
   let price: Double?
   let originalPrice: Double?
-//  let salePrice: JSONNull?
   let soldQuantity: Int?
   let availableQuantity: Int?
   let officialStoreID: Int?
   let officialStoreName: String?
   let useThumbnailID, acceptsMercadopago: Bool?
   let tags: [String]?
-  let shipping: Shipping?
+  let shipping: ShippingRemoteDTO?
   let stopTime: String?
   let seller: Seller?
   let sellerAddress: SellerAddress?
   let address: Address?
   let attributes: [Attribute]?
   let installments: InstallmentsRemoteDTO?
-//  let winnerItemID: JSONNull?
   let catalogListing: Bool?
-//  let discounts: JSONNull?
-//  let promotions: [JSONAny]?
   let differentialPricing: DifferentialPricing?
   let inventoryID: String?
 
@@ -62,7 +58,6 @@ struct ProductRemoteDTO: Decodable {
     case orderBackend = "order_backend"
     case price
     case originalPrice = "original_price"
-//    case salePrice = "sale_price"
     case soldQuantity = "sold_quantity"
     case availableQuantity = "available_quantity"
     case officialStoreID = "official_store_id"
@@ -76,10 +71,7 @@ struct ProductRemoteDTO: Decodable {
     case address
     case attributes
     case installments
-//    case winnerItemID = "winner_item_id"
     case catalogListing = "catalog_listing"
-//    case discounts
-//    case promotions
     case differentialPricing = "differential_pricing"
     case inventoryID = "inventory_id"
   }
@@ -182,7 +174,8 @@ struct Seller: Codable {
   let sellerReputation: SellerReputation?
 
   enum CodingKeys: String, CodingKey {
-    case id, nickname
+    case id
+    case nickname
     case carDealer = "car_dealer"
     case realEstateAgency = "real_estate_agency"
     case empty = "_"
@@ -257,9 +250,6 @@ struct Ratings: Codable {
 struct SellerAddress: Codable {
   let comment: String?
   let addressLine: String?
-  //  let id: JSONNull?
-  //  let latitude: JSONNull?
-  //  let longitude: JSONNull?
   let country: City?
   let state: City?
   let city: City?
@@ -267,9 +257,6 @@ struct SellerAddress: Codable {
   enum CodingKeys: String, CodingKey {
     case comment
     case addressLine = "address_line"
-    //    case id
-    //    case latitude
-    //    case longitude
     case country
     case state
     case city
@@ -283,14 +270,12 @@ struct City: Codable {
 }
 
 // MARK: - Shipping
-struct Shipping: Codable {
+struct ShippingRemoteDTO: Codable {
   let storePickUp: Bool?
   let freeShipping: Bool?
   let logisticType: String?
   let mode: String?
   let tags: [String]?
-  //  let benefits: JSONNull?
-  //let promise: JSONNull?
 
   enum CodingKeys: String, CodingKey {
     case storePickUp = "store_pick_up"
@@ -298,7 +283,5 @@ struct Shipping: Codable {
     case logisticType = "logistic_type"
     case mode
     case tags
-    //    case benefits
-    //    case promise
   }
 }
