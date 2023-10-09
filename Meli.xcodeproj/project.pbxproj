@@ -49,6 +49,8 @@
 		C699BDCD2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */; };
 		C699BDCF2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDCE2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift */; };
 		C699BDD12AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */; };
+		C699BDD32AD467AE00A07C03 /* ProductListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */; };
+		C699BDD52AD467C600A07C03 /* ProductListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescriptionUseCase.swift; sourceTree = "<group>"; };
 		C699BDCE2AD45B7800A07C03 /* GetProductDescriptionUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescriptionUseCaseImpl.swift; sourceTree = "<group>"; };
 		C699BDD02AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionRemoteDTO.swift; sourceTree = "<group>"; };
+		C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListEmptyView.swift; sourceTree = "<group>"; };
+		C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,8 @@
 		C640A9312AD1F491002AA5B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */,
+				C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */,
 				C640A91C2AD1C4A7002AA5B1 /* ProductListPageView.swift */,
 				C640A9242AD1D672002AA5B1 /* ProductListRow.swift */,
 			);
@@ -631,6 +637,7 @@
 				C699BDD12AD45D2700A07C03 /* ProductDetailDescriptionRemoteDTO.swift in Sources */,
 				C640A9392AD30444002AA5B1 /* SearchProductsRepository.swift in Sources */,
 				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
+				C699BDD52AD467C600A07C03 /* ProductListErrorView.swift in Sources */,
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
 				C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */,
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
@@ -638,6 +645,7 @@
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,
 				C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */,
+				C699BDD32AD467AE00A07C03 /* ProductListEmptyView.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,
 				C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */,
 				C640A9332AD1F4D1002AA5B1 /* ProductDetailPageView.swift in Sources */,
@@ -801,10 +809,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Meli/Preview Content\"";
-				DEVELOPMENT_TEAM = 7G4VS94BQR;
+				DEVELOPMENT_TEAM = MWN22WZZ3Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meli/Info.plist;
@@ -821,6 +830,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rastorga.Meli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -832,10 +842,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Meli/Preview Content\"";
-				DEVELOPMENT_TEAM = 7G4VS94BQR;
+				DEVELOPMENT_TEAM = MWN22WZZ3Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meli/Info.plist;
@@ -852,6 +863,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rastorga.Meli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

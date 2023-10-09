@@ -22,7 +22,7 @@ struct ProductListPageView: View {
           }
       case .loading:
         ProgressView()
-      case .success(let products):
+      case .success(let products) where !products.isEmpty:
         ScrollView {
           LazyVStack(spacing: 10) {
             ForEach(products) { productEntity in
@@ -37,20 +37,24 @@ struct ProductListPageView: View {
           }
           .padding(.top, 10)
         }
-        .searchable(
-          text: $query,
-          placement: .navigationBarDrawer(displayMode: .always),
-          prompt: "Buscar en Mercado Libre"
-        )
+
+      case .success:
+        ProductListEmptyView()
 
       case .error:
-        Text("error")
+        ProductListErrorView {
+          searchProductsViewModel.searchProducts(query: query)
+        }
       }
     }
+    .searchable(
+      text: $query,
+      placement: .navigationBarDrawer(displayMode: .always),
+      prompt: "Buscar en Mercado Libre"
+    )
     .onSubmit(of: .search) {
       searchProductsViewModel.searchProducts(query: query)
     }
-
   }
 }
 

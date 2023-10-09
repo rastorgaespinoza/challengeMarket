@@ -29,7 +29,7 @@ final class SearchProductsViewModel: ObservableObject {
 
   func searchProducts(query: String) {
     state = .loading
-    searchUseCase.getProducts(query: query)
+    searchUseCase.getProducts(query: query.lowercased())
       .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
         if case .failure = completion {
@@ -37,7 +37,7 @@ final class SearchProductsViewModel: ObservableObject {
         }
       }, receiveValue: { [weak self] products in
         guard let self = self else { return }
-        state = .success(products)
+        self.state = .success(products)
       })
       .store(in: &disposables)
   }
