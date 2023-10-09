@@ -18,21 +18,29 @@ struct ProductDetailPageView: View {
     LazyVStack(alignment: .leading, spacing: 8) {
       Text(productDetail.title)
 
-      AsyncImage(url: productDetail.imageURL) { phase in
-        if let image = phase.image {
-          image
-            .resizable()
-            .scaledToFit()
+      image
+    }
+  }
+}
 
-        } else if phase.error != nil {
-          Color(uiColor: UIColor.systemBackground)
+extension ProductDetailPageView {
+  private var image: some View {
+    AsyncImage(url: productDetail.imageURL) { phase in
+      if let image = phase.image {
+        image
+          .resizable()
+          .scaledToFit()
 
-        } else {
-          Color(uiColor: UIColor.systemBackground)
+      } else if phase.error != nil {
+        Color(uiColor: UIColor.secondarySystemBackground)
 
-        }
+      } else {
+        Color(uiColor: UIColor.secondarySystemBackground)
       }
     }
+    .frame(width: 140, height: 140)
+    .background(Color(uiColor: UIColor.secondarySystemBackground))
+    .cornerRadius(8)
   }
 }
 

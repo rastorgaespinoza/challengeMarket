@@ -36,6 +36,10 @@
 		C640A96A2AD38227002AA5B1 /* proximanovasoft-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */; };
 		C640A96C2AD382F5002AA5B1 /* proximanovasoft-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */; };
 		C640A96E2AD397D4002AA5B1 /* RootContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A96D2AD397D4002AA5B1 /* RootContainer.swift */; };
+		C640A9732AD3A274002AA5B1 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9722AD3A274002AA5B1 /* ProductDetailViewModel.swift */; };
+		C640A9772AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */; };
+		C640A9792AD3A32C002AA5B1 /* ProductDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */; };
+		C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		C640A9692AD38227002AA5B1 /* proximanovasoft-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-medium.otf"; sourceTree = "<group>"; };
 		C640A96B2AD382F5002AA5B1 /* proximanovasoft-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanovasoft-regular.otf"; sourceTree = "<group>"; };
 		C640A96D2AD397D4002AA5B1 /* RootContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainer.swift; sourceTree = "<group>"; };
+		C640A9722AD3A274002AA5B1 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDetailUseCase.swift; sourceTree = "<group>"; };
+		C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRepository.swift; sourceTree = "<group>"; };
+		C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDetailUseCaseImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				C640A96D2AD397D4002AA5B1 /* RootContainer.swift */,
-				C640A9182AD1C472002AA5B1 /* ProductDetail */,
 				C640A9172AD1C469002AA5B1 /* ProductList */,
+				C640A9182AD1C472002AA5B1 /* ProductDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -199,6 +207,8 @@
 		C640A9182AD1C472002AA5B1 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C640A96F2AD3A24D002AA5B1 /* Data */,
+				C640A9702AD3A256002AA5B1 /* Domain */,
 				C640A92F2AD1F480002AA5B1 /* Presentation */,
 			);
 			path = ProductDetail;
@@ -262,6 +272,7 @@
 		C640A92F2AD1F480002AA5B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C640A9712AD3A260002AA5B1 /* ViewModels */,
 				C640A9302AD1F488002AA5B1 /* Views */,
 			);
 			path = Presentation;
@@ -361,6 +372,47 @@
 				C640A9592AD36B29002AA5B1 /* ProximaNovaFont.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C640A96F2AD3A24D002AA5B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C640A9702AD3A256002AA5B1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C640A97A2AD3A33B002AA5B1 /* UseCases */,
+				C640A9742AD3A2BD002AA5B1 /* Ports */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C640A9712AD3A260002AA5B1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9722AD3A274002AA5B1 /* ProductDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C640A9742AD3A2BD002AA5B1 /* Ports */ = {
+			isa = PBXGroup;
+			children = (
+				C640A9762AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift */,
+				C640A9782AD3A32C002AA5B1 /* ProductDetailRepository.swift */,
+			);
+			path = Ports;
+			sourceTree = "<group>";
+		};
+		C640A97A2AD3A33B002AA5B1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C640A97B2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,12 +552,15 @@
 			files = (
 				C640A93F2AD338E2002AA5B1 /* SearchProductsRemoteMapper.swift in Sources */,
 				C640A94E2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift in Sources */,
+				C640A9792AD3A32C002AA5B1 /* ProductDetailRepository.swift in Sources */,
 				C640A9472AD33FBE002AA5B1 /* ProductListServiceLocator.swift in Sources */,
+				C640A9732AD3A274002AA5B1 /* ProductDetailViewModel.swift in Sources */,
 				C640A9412AD33A41002AA5B1 /* HTTPClient.swift in Sources */,
 				C640A96E2AD397D4002AA5B1 /* RootContainer.swift in Sources */,
 				C640A9372AD303EC002AA5B1 /* SearchProductsUseCase.swift in Sources */,
 				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
 				C640A9492AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift in Sources */,
+				C640A9772AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift in Sources */,
 				C640A95A2AD36B29002AA5B1 /* ProximaNovaFont.swift in Sources */,
 				C640A93C2AD30475002AA5B1 /* SearchProductsRepositoryRemoteImpl.swift in Sources */,
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,
@@ -516,6 +571,7 @@
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,
+				C640A97C2AD3A35B002AA5B1 /* GetProductDetailUseCaseImpl.swift in Sources */,
 				C640A9332AD1F4D1002AA5B1 /* ProductDetailPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
