@@ -24,7 +24,8 @@ enum ProductDetailRemoteMapper {
       thumbnail: productRemote.thumbnail ?? "",
       installments: nil,
       shipping: shipping,
-      officialStoreName: nil
+      officialStoreName: nil,
+      attributes: []
     )
   }
 }

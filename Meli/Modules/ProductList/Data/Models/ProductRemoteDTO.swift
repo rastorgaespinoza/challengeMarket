@@ -35,7 +35,7 @@ struct ProductRemoteDTO: Decodable {
   let seller: Seller?
   let sellerAddress: SellerAddress?
   let address: Address?
-  let attributes: [Attribute]?
+  let attributes: [AttributeRemoteDTO]?
   let installments: InstallmentsRemoteDTO?
   let catalogListing: Bool?
   let differentialPricing: DifferentialPricing?
@@ -93,14 +93,14 @@ struct Address: Codable {
 }
 
 // MARK: - Attribute
-struct Attribute: Codable {
+struct AttributeRemoteDTO: Codable {
   let id: String?
   let name: String?
   let valueID: String?
   let valueName: String?
   let attributeGroupID: String?
   let attributeGroupName: String?
-  let valueStruct: Struct?
+  let valueStruct: StructRemoteDTO?
   let values: [Value]?
   let source: Int?
   let valueType: String?
@@ -120,7 +120,7 @@ struct Attribute: Codable {
 }
 
 // MARK: - Struct
-struct Struct: Codable {
+struct StructRemoteDTO: Codable {
   let number: Double?
   let unit: String?
 }
@@ -129,7 +129,7 @@ struct Struct: Codable {
 struct Value: Codable {
   let id: String?
   let name: String?
-  let valueStruct: Struct?
+  let valueStruct: StructRemoteDTO?
   let source: Int?
 
   enum CodingKeys: String, CodingKey {

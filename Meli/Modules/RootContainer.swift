@@ -38,7 +38,10 @@ extension ProductDetailPageView {
       title: product.title,
       thumbnail: product.thumbnail,
       price: product.price ?? 0,
-      originalPrice: product.originalPrice
+      originalPrice: product.originalPrice,
+      installments: product.installments,
+      freeShipping: product.shipping?.freeShipping ?? false,
+      attributes: []
     )
     self.productDetail = productDetail
   }
@@ -48,4 +51,5 @@ enum Route: Hashable {
   case search(String)
   case product(Product)
   case related(Product)
+  case productFeatures([ProductAttribute])
 }

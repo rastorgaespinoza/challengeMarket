@@ -14,6 +14,7 @@ struct Product: Identifiable, Hashable {
   let installments: Installments?
   let shipping: Shipping?
   let officialStoreName: String?
+  let attributes: [ProductAttribute]
 }
 
 struct Installments: Hashable {
@@ -29,4 +30,13 @@ struct Shipping: Hashable {
   let logisticType: String?
   let mode: String?
   let tags: [String]?
+}
+
+struct ProductAttribute: Hashable {
+  let id: String?
+  let name: String?
+  let valueID: String?
+  let valueName: String?
+  let attributeGroupID: String?
+  let attributeGroupName: String?
 }
