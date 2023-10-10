@@ -58,6 +58,7 @@
 		C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */; };
 		C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */; };
 		C699BDE32AD4EDEA00A07C03 /* ProductListInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDE22AD4EDEA00A07C03 /* ProductListInitView.swift */; };
+		C699BDED2AD5070600A07C03 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDEC2AD5070600A07C03 /* String+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTimePreviews.swift; sourceTree = "<group>"; };
 		C699BDE22AD4EDEA00A07C03 /* ProductListInitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInitView.swift; sourceTree = "<group>"; };
+		C699BDEC2AD5070600A07C03 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			children = (
 				C640A9572AD36B0E002AA5B1 /* Font+extension.swift */,
 				C699BDD62AD4747B00A07C03 /* View+extension.swift */,
+				C699BDEC2AD5070600A07C03 /* String+extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
 				C699BDD92AD4CF5200A07C03 /* ShippingRemoteDTO.swift in Sources */,
 				C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */,
+				C699BDED2AD5070600A07C03 /* String+extension.swift in Sources */,
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
 				C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */,
 				C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */,

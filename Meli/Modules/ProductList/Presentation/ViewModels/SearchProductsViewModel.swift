@@ -29,7 +29,8 @@ final class SearchProductsViewModel: ObservableObject {
 
   func searchProducts(query: String) {
     state = .loading
-    searchUseCase.getProducts(query: query.lowercased())
+    let query = query.trimmed.lowercased()
+    searchUseCase.getProducts(query: query)
       .sink(receiveCompletion: { [weak self] completion in
         guard let self = self else { return }
         if case .failure = completion {
