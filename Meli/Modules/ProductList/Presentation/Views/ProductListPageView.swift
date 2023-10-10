@@ -21,20 +21,32 @@ struct ProductListPageView: View {
         ProgressView()
 
       case .success(let productListResult) where !productListResult.results.isEmpty:
-        ScrollView {
-          LazyVStack(spacing: 10) {
-            ForEach(productListResult.results) { productEntity in
-              NavigationLink(value: Route.product(productEntity)) {
-                ProductListRow(productEntity: productEntity)
-              }
+        VStack(spacing: .zero) {
+          HStack {
+            Text(" \(productListResult.paging.total) resultados")
+              .customFont(.regular, size: 14)
+            Spacer()
+          }
+          .padding()
+          
+          Divider()
 
-              if productEntity != productListResult.results.last {
-                Divider()
+          ScrollView {
+            LazyVStack(spacing: 10) {
+              ForEach(productListResult.results) { productEntity in
+                NavigationLink(value: Route.product(productEntity)) {
+                  ProductListRow(productEntity: productEntity)
+                }
+
+                if productEntity != productListResult.results.last {
+                  Divider()
+                }
               }
             }
+            .padding(.top, 10)
           }
-          .padding(.top, 10)
         }
+
 
       case .success:
         ProductListEmptyView()
