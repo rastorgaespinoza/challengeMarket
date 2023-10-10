@@ -7,6 +7,20 @@
 
 import Foundation
 
+enum SearchProductsRemoteMapper {
+  static func map(_ searchProductsRemote: ProductListSearchResultRemoteDTO) -> ProductListResult {
+    let paging = Paging(
+      total: searchProductsRemote.paging?.total ?? 0,
+      primaryResults: searchProductsRemote.paging?.primaryResults ?? 0,
+      offset: searchProductsRemote.paging?.offset ?? 0,
+      limit: searchProductsRemote.paging?.limit ?? 50
+    )
+
+    let products = (searchProductsRemote.results ?? []).toModels()
+    return ProductListResult(paging: paging, results: products)
+  }
+}
+
 extension Array where Element == ProductRemoteDTO {
   func toModels() -> [Product] {
     return map {

@@ -44,6 +44,7 @@
 		C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */; };
 		C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */; };
 		C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */; };
+		C64FEC332AD57A30008F1F6A /* ProductListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FEC322AD57A30008F1F6A /* ProductListResult.swift */; };
 		C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */; };
 		C699BDCB2AD4553500A07C03 /* proximanova-regular-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */; };
 		C699BDCD2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */; };
@@ -120,6 +121,7 @@
 		C640A9822AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteDTO.swift; sourceTree = "<group>"; };
 		C640A9842AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteMapper.swift; sourceTree = "<group>"; };
 		C640A9872AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailServiceLocator.swift; sourceTree = "<group>"; };
+		C64FEC322AD57A30008F1F6A /* ProductListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListResult.swift; sourceTree = "<group>"; };
 		C699BDC82AD43CDD00A07C03 /* ProductDetailFeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailFeaturesView.swift; sourceTree = "<group>"; };
 		C699BDCA2AD4553500A07C03 /* proximanova-regular-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular-italic.otf"; sourceTree = "<group>"; };
 		C699BDCC2AD45B5400A07C03 /* GetProductDescriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductDescriptionUseCase.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A9222AD1D5E4002AA5B1 /* Product.swift */,
+				C64FEC322AD57A30008F1F6A /* ProductListResult.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */,
 				C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
+				C64FEC332AD57A30008F1F6A /* ProductListResult.swift in Sources */,
 				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,
 				C699BDDD2AD4D01C00A07C03 /* AttributeRemoteDTO.swift in Sources */,
 				C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */,

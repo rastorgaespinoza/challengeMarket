@@ -16,17 +16,19 @@ struct ProductListPageView: View {
       switch searchProductsViewModel.state {
       case .neverLoading:
         ProductListInitView()
+
       case .loading:
         ProgressView()
-      case .success(let products) where !products.isEmpty:
+
+      case .success(let productListResult) where !productListResult.results.isEmpty:
         ScrollView {
           LazyVStack(spacing: 10) {
-            ForEach(products) { productEntity in
+            ForEach(productListResult.results) { productEntity in
               NavigationLink(value: Route.product(productEntity)) {
                 ProductListRow(productEntity: productEntity)
               }
 
-              if productEntity != products.last {
+              if productEntity != productListResult.results.last {
                 Divider()
               }
             }

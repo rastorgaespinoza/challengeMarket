@@ -8,5 +8,5 @@
 import Combine
 
 protocol SearchProductsRepository {
-  func getProducts(query: String) -> AnyPublisher<[Product], Error>
+  func getProducts(query: String) -> AnyPublisher<ProductListResult, Error>
 }

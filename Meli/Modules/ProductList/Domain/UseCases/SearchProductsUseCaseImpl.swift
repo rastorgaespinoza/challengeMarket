@@ -14,7 +14,7 @@ final class SearchProductsUseCaseImpl: SearchProductsUseCase {
     self.repository = repository
   }
 
-  func getProducts(query: String) -> AnyPublisher<[Product], Error> {
+  func getProducts(query: String) -> AnyPublisher<ProductListResult, Error> {
     repository.getProducts(query: query)
   }
 }

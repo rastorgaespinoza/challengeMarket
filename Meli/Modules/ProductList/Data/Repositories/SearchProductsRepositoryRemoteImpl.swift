@@ -21,19 +21,31 @@ final class SearchProductsRepositoryRemoteImpl: SearchProductsRepository {
     self.url = url
   }
 
-  func getProducts(query: String) -> AnyPublisher<[Product], Swift.Error> {
-    let queryEncoding = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-    let urlWithQuery = url.appending(queryItems: [URLQueryItem(name: "q", value: queryEncoding)])
+  func getProducts(query: String) -> AnyPublisher<ProductListResult, Swift.Error> {
+    let urlWithQuery = url.appending(queryItems: [URLQueryItem(name: "q", value: query)])
 
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .secondsSince1970
 
     let request = URLRequest(url: urlWithQuery)
+    #if DEBUG
+    DispatchQueue.global(qos: .background).async {
+      print("--> request: \(request.url?.absoluteString ?? "")")
+    }
+    #endif
     return client.getPublisherDataTask(from: request)
       .tryMap { element -> Data in
         guard let httpResponse = element.response as? HTTPURLResponse else {
           throw Error.invalidData
         }
+
+        #if DEBUG
+        DispatchQueue.global(qos: .background).async {
+          let jsonFormatted = String(data: element.data, encoding: .utf8) ?? "no json found"
+          print("--> response: \(jsonFormatted)")
+        }
+        #endif
+
         if httpResponse.statusCode == 200 {
           return element.data
         } else {
@@ -41,7 +53,7 @@ final class SearchProductsRepositoryRemoteImpl: SearchProductsRepository {
         }
       }
       .decode(type: ProductListSearchResultRemoteDTO.self, decoder: decoder)
-      .map { $0.results.toModels() }
+      .map { SearchProductsRemoteMapper.map($0) }
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
   }

@@ -15,7 +15,7 @@ final class SearchProductsViewModel: ObservableObject {
   enum State {
     case neverLoading
     case loading
-    case success([Product])
+    case success(ProductListResult)
     case error
   }
 
@@ -36,9 +36,9 @@ final class SearchProductsViewModel: ObservableObject {
         if case .failure = completion {
           self.state = .error
         }
-      }, receiveValue: { [weak self] products in
+      }, receiveValue: { [weak self] productListResult in
         guard let self = self else { return }
-        self.state = .success(products)
+        self.state = .success(productListResult)
       })
       .store(in: &disposables)
   }

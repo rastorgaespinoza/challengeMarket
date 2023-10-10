@@ -6,5 +6,13 @@
 //
 
 struct ProductListSearchResultRemoteDTO: Decodable {
-  let results: [ProductRemoteDTO]
+  let paging: PagingRemoteDTO?
+  let results: [ProductRemoteDTO]?
+}
+
+struct PagingRemoteDTO: Decodable {
+  let total: Int?
+  let primaryResults: Int?
+  let offset: Int?
+  let limit: Int?
 }
