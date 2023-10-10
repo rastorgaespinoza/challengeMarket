@@ -57,6 +57,7 @@
 		C699BDDD2AD4D01C00A07C03 /* AttributeRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */; };
 		C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */; };
 		C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */; };
+		C699BDE32AD4EDEA00A07C03 /* ProductListInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDE22AD4EDEA00A07C03 /* ProductListInitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +91,7 @@
 		C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRemoteDTO.swift; sourceTree = "<group>"; };
 		C640A9222AD1D5E4002AA5B1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C640A9242AD1D672002AA5B1 /* ProductListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRow.swift; sourceTree = "<group>"; };
-		C640A92E2AD1E55A002AA5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C640A92E2AD1E55A002AA5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C640A9322AD1F4D1002AA5B1 /* ProductDetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPageView.swift; sourceTree = "<group>"; };
 		C640A9362AD303EC002AA5B1 /* SearchProductsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsUseCase.swift; sourceTree = "<group>"; };
 		C640A9382AD30444002AA5B1 /* SearchProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsRepository.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTimePreviews.swift; sourceTree = "<group>"; };
+		C699BDE22AD4EDEA00A07C03 /* ProductListInitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +183,6 @@
 		C640A8EA2ACF840E002AA5B1 /* Meli */ = {
 			isa = PBXGroup;
 			children = (
-				C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */,
 				C640A92E2AD1E55A002AA5B1 /* Info.plist */,
 				C640A8EB2ACF840E002AA5B1 /* MeliApp.swift */,
 				C640A9152AD1C459002AA5B1 /* Modules */,
@@ -335,6 +336,7 @@
 				C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */,
 				C640A91C2AD1C4A7002AA5B1 /* ProductListPageView.swift */,
 				C640A9242AD1D672002AA5B1 /* ProductListRow.swift */,
+				C699BDE22AD4EDEA00A07C03 /* ProductListInitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,6 +402,7 @@
 		C640A94F2AD36909002AA5B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C640A8EF2ACF840F002AA5B1 /* Assets.xcassets */,
 				C640A9502AD3691C002AA5B1 /* Fonts */,
 			);
 			path = "Supporting Files";
@@ -650,6 +653,7 @@
 				C640A9772AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift in Sources */,
 				C699BDDB2AD4CF7C00A07C03 /* SellerRemoteDTO.swift in Sources */,
 				C640A95A2AD36B29002AA5B1 /* ProximaNovaFont.swift in Sources */,
+				C699BDE32AD4EDEA00A07C03 /* ProductListInitView.swift in Sources */,
 				C640A93C2AD30475002AA5B1 /* SearchProductsRepositoryRemoteImpl.swift in Sources */,
 				C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */,
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,

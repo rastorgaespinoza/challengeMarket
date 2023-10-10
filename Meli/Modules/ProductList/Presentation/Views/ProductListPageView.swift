@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ProductListPageView: View {
-  @State var query = "iphone"
+  @State var query = ""
   @StateObject private var searchProductsViewModel = ProductListServiceLocator().searchProductsViewModel
 
   var body: some View {
     VStack {
       switch searchProductsViewModel.state {
       case .neverLoading:
-        Text("")
-          .onAppear {
-            searchProductsViewModel.searchProducts(query: query)
-          }
+        ProductListInitView()
       case .loading:
         ProgressView()
       case .success(let products) where !products.isEmpty:

@@ -12,13 +12,14 @@ struct RootContainer: View {
 
   var body: some View {
     NavigationStack(path: $path) {
-      ProductListPageView(query: "iphone")
+      ProductListPageView()
         .navigationStyleModifier(title: "Buscador de productos")
         .navigationDestination(for: Route.self) { route in
           switch route {
           case let .product(product):
             ProductDetailPageView(product: product)
               .navigationStyleModifier(title: "Detalle del producto")
+
           case let .productFeatures(features):
             ProductDetailFeaturesView(productCharacteristics: features)
               .navigationStyleModifier(title: "Características")

@@ -26,7 +26,8 @@ final class ProductDetailRepositoryRemoteImpl: ProductDetailRepository {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .secondsSince1970
 
-    return client.getPublisherDataTask(from: urlWithItemID)
+    let request = URLRequest(url: urlWithItemID)
+    return client.getPublisherDataTask(from: request)
       .tryMap { element -> Data in
         guard let httpResponse = element.response as? HTTPURLResponse else {
           throw Error.invalidData
@@ -48,7 +49,8 @@ final class ProductDetailRepositoryRemoteImpl: ProductDetailRepository {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .secondsSince1970
 
-    return client.getPublisherDataTask(from: urlWithItemID)
+    let request = URLRequest(url: urlWithItemID)
+    return client.getPublisherDataTask(from: request)
       .tryMap { element -> Data in
         guard let httpResponse = element.response as? HTTPURLResponse else {
           throw Error.invalidData

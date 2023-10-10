@@ -22,12 +22,14 @@ final class SearchProductsRepositoryRemoteImpl: SearchProductsRepository {
   }
 
   func getProducts(query: String) -> AnyPublisher<[Product], Swift.Error> {
-    let urlWithQuery = url.appending(queryItems: [URLQueryItem(name: "q", value: query)])
+    let queryEncoding = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+    let urlWithQuery = url.appending(queryItems: [URLQueryItem(name: "q", value: queryEncoding)])
 
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .secondsSince1970
 
-    return client.getPublisherDataTask(from: urlWithQuery)
+    let request = URLRequest(url: urlWithQuery)
+    return client.getPublisherDataTask(from: request)
       .tryMap { element -> Data in
         guard let httpResponse = element.response as? HTTPURLResponse else {
           throw Error.invalidData

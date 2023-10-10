@@ -15,8 +15,8 @@ final class URLSessionHTTPClient: HTTPClient {
     self.session = session
   }
 
-  func getPublisherDataTask(from url: URL) -> AnyPublisher<HTTPClient.DataTaskOutput, HTTPClient.DataTaskFailure> {
-    return session.dataTaskPublisher(for: url)
+  func getPublisherDataTask(from request: URLRequest) -> AnyPublisher<HTTPClient.DataTaskOutput, HTTPClient.DataTaskFailure> {
+    return session.dataTaskPublisher(for: request)
       .eraseToAnyPublisher()
   }
 }
