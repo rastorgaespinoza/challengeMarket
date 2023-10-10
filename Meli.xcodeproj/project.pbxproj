@@ -52,6 +52,10 @@
 		C699BDD32AD467AE00A07C03 /* ProductListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */; };
 		C699BDD52AD467C600A07C03 /* ProductListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */; };
 		C699BDD72AD4747B00A07C03 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD62AD4747B00A07C03 /* View+extension.swift */; };
+		C699BDD92AD4CF5200A07C03 /* ShippingRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDD82AD4CF5200A07C03 /* ShippingRemoteDTO.swift */; };
+		C699BDDB2AD4CF7C00A07C03 /* SellerRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDA2AD4CF7C00A07C03 /* SellerRemoteDTO.swift */; };
+		C699BDDD2AD4D01C00A07C03 /* AttributeRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */; };
+		C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,10 @@
 		C699BDD22AD467AE00A07C03 /* ProductListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListEmptyView.swift; sourceTree = "<group>"; };
 		C699BDD42AD467C600A07C03 /* ProductListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListErrorView.swift; sourceTree = "<group>"; };
 		C699BDD62AD4747B00A07C03 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		C699BDD82AD4CF5200A07C03 /* ShippingRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingRemoteDTO.swift; sourceTree = "<group>"; };
+		C699BDDA2AD4CF7C00A07C03 /* SellerRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRemoteDTO.swift; sourceTree = "<group>"; };
+		C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeRemoteDTO.swift; sourceTree = "<group>"; };
+		C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRemoteDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +280,12 @@
 		C640A91E2AD1C689002AA5B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */,
 				C640A94D2AD34B0A002AA5B1 /* ProductListSearchResultRemoteDTO.swift */,
+				C640A91F2AD1C6A3002AA5B1 /* ProductRemoteDTO.swift */,
+				C699BDD82AD4CF5200A07C03 /* ShippingRemoteDTO.swift */,
+				C699BDDA2AD4CF7C00A07C03 /* SellerRemoteDTO.swift */,
+				C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */,
+				C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -633,8 +645,10 @@
 				C640A9202AD1C6A3002AA5B1 /* ProductRemoteDTO.swift in Sources */,
 				C640A9492AD3402E002AA5B1 /* SearchProductsUseCaseImpl.swift in Sources */,
 				C640A9772AD3A2E9002AA5B1 /* GetProductDetailUseCase.swift in Sources */,
+				C699BDDB2AD4CF7C00A07C03 /* SellerRemoteDTO.swift in Sources */,
 				C640A95A2AD36B29002AA5B1 /* ProximaNovaFont.swift in Sources */,
 				C640A93C2AD30475002AA5B1 /* SearchProductsRepositoryRemoteImpl.swift in Sources */,
+				C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */,
 				C640A9442AD33A90002AA5B1 /* URLSessionHTTPClient.swift in Sources */,
 				C640A9252AD1D672002AA5B1 /* ProductListRow.swift in Sources */,
 				C640A9852AD3A852002AA5B1 /* ProductDetailRemoteMapper.swift in Sources */,
@@ -643,11 +657,13 @@
 				C640A9232AD1D5E4002AA5B1 /* Product.swift in Sources */,
 				C699BDD52AD467C600A07C03 /* ProductListErrorView.swift in Sources */,
 				C640A91D2AD1C4A7002AA5B1 /* ProductListPageView.swift in Sources */,
+				C699BDD92AD4CF5200A07C03 /* ShippingRemoteDTO.swift in Sources */,
 				C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */,
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
 				C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,
+				C699BDDD2AD4D01C00A07C03 /* AttributeRemoteDTO.swift in Sources */,
 				C699BDC92AD43CDD00A07C03 /* ProductDetailFeaturesView.swift in Sources */,
 				C699BDD32AD467AE00A07C03 /* ProductListEmptyView.swift in Sources */,
 				C640A94C2AD34450002AA5B1 /* SearchProductsViewModel.swift in Sources */,

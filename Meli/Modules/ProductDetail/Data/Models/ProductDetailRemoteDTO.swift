@@ -50,7 +50,6 @@ struct ProductDetailRemoteDTO: Codable {
   let dateCreated: String?
   let lastUpdated: String?
   let health: Int?
-  let catalogListing: Bool?
   let channels: [String]?
 
   enum CodingKeys: String, CodingKey {
@@ -94,7 +93,6 @@ struct ProductDetailRemoteDTO: Codable {
     case dateCreated = "date_created"
     case lastUpdated = "last_updated"
     case health
-    case catalogListing = "catalog_listing"
     case channels
   }
 }
