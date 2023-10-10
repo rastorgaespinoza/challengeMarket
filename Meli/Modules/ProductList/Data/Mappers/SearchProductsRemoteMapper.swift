@@ -38,11 +38,9 @@ extension Array where Element == ProductRemoteDTO {
           nickname: sellerRemote.nickname,
           carDealer: sellerRemote.carDealer,
           realEstateAgency: sellerRemote.realEstateAgency,
-          empty: sellerRemote.empty,
           registrationDate: sellerRemote.registrationDate,
           tags: sellerRemote.tags,
-          carDealerLogo: sellerRemote.carDealerLogo,
-          permalink: sellerRemote.permalink
+          carDealerLogo: sellerRemote.carDealerLogo
         )
       }
 

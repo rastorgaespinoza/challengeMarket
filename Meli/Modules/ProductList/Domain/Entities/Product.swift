@@ -32,11 +32,9 @@ struct Seller: Hashable, Equatable {
   let nickname: String?
   let carDealer: Bool?
   let realEstateAgency: Bool?
-  let empty: Bool?
   let registrationDate: String?
   let tags: [String]?
   let carDealerLogo: String?
-  let permalink: String?
 }
 
 struct Shipping: Hashable, Equatable {
@@ -50,7 +48,6 @@ struct Shipping: Hashable, Equatable {
 struct ProductAttribute: Hashable, Equatable {
   let id: String?
   let name: String?
-  let valueID: String?
   let valueName: String?
   let attributeGroupID: String?
   let attributeGroupName: String?

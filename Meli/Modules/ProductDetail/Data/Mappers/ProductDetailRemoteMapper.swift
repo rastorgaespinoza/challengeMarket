@@ -22,7 +22,6 @@ enum ProductDetailRemoteMapper {
       return ProductAttribute(
         id: attributeRemote.id,
         name: attributeRemote.name,
-        valueID: attributeRemote.valueID,
         valueName: attributeRemote.valueName,
         attributeGroupID: attributeRemote.attributeGroupID,
         attributeGroupName: attributeRemote.attributeGroupName

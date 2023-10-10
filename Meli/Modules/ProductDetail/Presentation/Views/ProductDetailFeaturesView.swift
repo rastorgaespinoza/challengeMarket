@@ -55,9 +55,13 @@ extension ProductDetailFeaturesView {
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
         .padding()
-        .background((index % 2 == 0) ? Color.gray.opacity(0.1) : Color.white)
+        .background(backgroundColor(isOdd: (index % 2 == 0)))
       }
     }
+  }
+
+  private func backgroundColor(isOdd: Bool) -> Color {
+    return isOdd ? Color(uiColor: .secondarySystemBackground) : Color(uiColor: .systemBackground)
   }
 }
 
