@@ -31,6 +31,8 @@ struct ProductListEmptyView: View {
   }
 }
 
+#if DEBUG
 #Preview {
   ProductListEmptyView()
 }
+#endif

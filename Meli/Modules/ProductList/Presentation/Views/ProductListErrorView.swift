@@ -39,6 +39,8 @@ struct ProductListErrorView: View {
   }
 }
 
+#if DEBUG
 #Preview {
   ProductListErrorView()
 }
+#endif

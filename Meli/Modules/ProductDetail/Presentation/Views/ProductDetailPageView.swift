@@ -262,19 +262,14 @@ extension ProductDetailPageView {
 
 #if DEBUG
 struct ProductDetailPageView_Previews: PreviewProvider {
-  static let productDetail = ProductDetailPageView.ProductDetail(
-    id: "",
-    title: "Apple iPhone 11 (64 GB) - Negro - Distribuidor autorizado",
-    thumbnail: "http://http2.mlstatic.com/D_962169-MLA46153276294_052021-I.jpg",
-    price: 389_990,
-    originalPrice: 669_990,
-    installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP"),
-    freeShipping: true,
-    attributes: []
-  )
-
   static var previews: some View {
-    ProductDetailPageView(productDetail: productDetail)
+    ProductDetailPageView(productDetail: .preview)
+      .preferredColorScheme(.light)
+      .previewDisplayName("Light Theme")
+
+    ProductDetailPageView(productDetail: .preview)
+      .preferredColorScheme(.dark)
+      .previewDisplayName("Dark Theme")
   }
 }
 #endif

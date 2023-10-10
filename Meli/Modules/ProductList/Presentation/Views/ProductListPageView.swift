@@ -75,6 +75,8 @@ extension ProductListRow {
   }
 }
 
+#if DEBUG
 #Preview {
   ProductListPageView()
 }
+#endif

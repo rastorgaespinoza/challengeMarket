@@ -56,6 +56,7 @@
 		C699BDDB2AD4CF7C00A07C03 /* SellerRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDA2AD4CF7C00A07C03 /* SellerRemoteDTO.swift */; };
 		C699BDDD2AD4D01C00A07C03 /* AttributeRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */; };
 		C699BDDF2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */; };
+		C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		C699BDDA2AD4CF7C00A07C03 /* SellerRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDDC2AD4D01C00A07C03 /* AttributeRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeRemoteDTO.swift; sourceTree = "<group>"; };
 		C699BDDE2AD4D03900A07C03 /* InstallmentsRemoteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRemoteDTO.swift; sourceTree = "<group>"; };
+		C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTimePreviews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C640A8F22ACF840F002AA5B1 /* Preview Assets.xcassets */,
+				C699BDE02AD4E76F00A07C03 /* DesignTimePreviews.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				C699BDD92AD4CF5200A07C03 /* ShippingRemoteDTO.swift in Sources */,
 				C640A9832AD3A4DC002AA5B1 /* ProductDetailRemoteDTO.swift in Sources */,
 				C640A9582AD36B0E002AA5B1 /* Font+extension.swift in Sources */,
+				C699BDE12AD4E76F00A07C03 /* DesignTimePreviews.swift in Sources */,
 				C640A9882AD3AB4D002AA5B1 /* ProductDetailServiceLocator.swift in Sources */,
 				C640A8EC2ACF840E002AA5B1 /* MeliApp.swift in Sources */,
 				C640A97F2AD3A442002AA5B1 /* ProductDetailRepositoryRemoteImpl.swift in Sources */,

@@ -206,21 +206,8 @@ extension ProductListRow {
 
 #if DEBUG
 struct ProductListRow_Previews: PreviewProvider {
-  static let product = ProductListRow.ProductRow(
-    id: "",
-    title: "Apple iPhone 11 (64 GB) - Negro - Distribuidor autorizado",
-    thumbnail: "http://http2.mlstatic.com/D_962169-MLA46153276294_052021-I.jpg",
-    price: 389_990,
-    originalPrice: 669_990,
-    installments: Installments(quantity: 12, amount: 32499.17, rate: 0, currencyID: "CLP"),
-    freeShipping: true,
-    officialStoreName: "Apple",
-    isUsed: false,
-    isInternational: false
-  )
-
   static var previews: some View {
-    ProductListRow(productRow: product)
+    ProductListRow(productRow: .preview)
   }
 }
 #endif

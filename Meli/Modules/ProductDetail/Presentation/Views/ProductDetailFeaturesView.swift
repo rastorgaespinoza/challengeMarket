@@ -14,6 +14,10 @@ struct ProductDetailFeaturesView: View {
     return widthScreen > 375
   }
 
+  init(source: [Source]) {
+    self.source = source
+  }
+
   struct Source {
     let displayName: String
     let value: String
@@ -65,6 +69,14 @@ extension ProductDetailFeaturesView {
   }
 }
 
-#Preview {
-  ProductDetailFeaturesView(productCharacteristics: [])
+#if DEBUG
+#Preview("Light Theme") {
+  ProductDetailFeaturesView(source: ProductDetailFeaturesView.Source.previews)
+    .preferredColorScheme(.light)
 }
+
+#Preview("Dark Theme") {
+  ProductDetailFeaturesView(source: ProductDetailFeaturesView.Source.previews)
+    .preferredColorScheme(.dark)
+}
+#endif
